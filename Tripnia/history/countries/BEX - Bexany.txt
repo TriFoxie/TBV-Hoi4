@@ -33,36 +33,110 @@ add_ideas = {
     autarky
 }
 
-#TODO: Check IDs
 #RESEARCH AND PRODUCTION
 set_technology = {
-    #Army
-    support_equipment = 1
-    engineer_company = 1
-    infantry_weapons = 1
-    infantry_weapons1 = 1
-    infantry_weapons2 = 1
-    gw_artillery = 1
-    interwar_antiair = 1
-    interwar_tank = 1
-    light_tank = 1
-
     #Logistics
     fuel_silos = 1
+    tech_trucks = 1
+    motorised_infantry = 1
+    armored_car1 = 1
     basic_train = 1
-    armored_train = 1
 
-    #Nuclear
-    nuclear_research = 1
-    missiles = 1
+    #Nukes
+    atomic_research = 1
+    experimental_rockets = 1
+    electronic_mechanical_engineering = 1
+    radio = 1
 
-    #Ships
-    early_destroyer = 1
-    early_cruiser = 1
-
-    #Air
-    interwar_fighter = 1
-    early_fighter = 1
-    early_close_air_support = 1
-    early_strategic_bomber = 1
+    #Army
+    tech_support = 1
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    support_weapons = 1
+    marines = 1
+    paratroopers = 1
+    tech_engineers = 1
+    engineer2 = 1
+    gw_artillery = 1
+    interwar_artillery = 1
+}
+#Ships
+if = {
+    limit = { has_dlc = "Man the Guns" }
+    set_technology = {
+        early_ship_hull_light = 1
+        basic_ship_hull_light = 1
+        early_ship_hull_cruiser = 1
+        basic_ship_hull_cruiser = 1
+        early_ship_hull_heavy = 1
+        early_ship_hull_submarine = 1
+        basic_ship_hull_submarine = 1
+        basic_depth_charges = 1
+        basic_battery = 1
+        basic_light_battery = 1
+        basic_heavy_battery = 1
+        basic_torpedo = 1
+        mtg_transport = 1
+    }
+}
+if = {
+    limit = { NOT = { has_dlc = "Man the Guns" } }
+    set_technology = {
+        early_destroyer = 1
+        basic_destroyer = 1
+        early_light_cruiser = 1
+        basic_light_cruiser = 1
+        early_heavy_cruiser = 1
+        basic_heavy_cruiser = 1
+        early_battlecruiser = 1
+        basic_battlecruiser = 1
+        early_battleship = 1
+        basic_battleship = 1
+        early_submarine = 1
+        basic_submarine = 1
+        landing_craft = 1
+    }
+}
+#Planes
+if = {
+    limit = { has_dlc = "By Blood Alone" }
+    set_technology = {
+        bba_early_transport_plane = 1
+        iw_small_airframe = 1
+        basic_small_airframe = 1
+        iw_medium_airframe = 1
+        basic_medium_airframe = 1
+        iw_large_airframe = 1
+        basic_large_airframe = 1
+        early_bombs = 1
+        aa_lmg = 1
+        engines_1 = 1
+    }
+}
+if = {
+    limit = { NOT = { has_dlc = "By Blood Alone" } }
+    set_technology = {
+        transport_plane_equipment_1 = 1
+        fighter_equipment_0 = 1
+        tac_bomber_equipment_0 = 1
+        strat_bomber_equipment_1 = 1
+        CAS1 = 1
+    }
+}
+#Tanks
+if = {
+    limit = { has_dlc = "No Step Back" }
+    set_technology = {
+        gwtank_chassis = 1
+        basic_light_tank_chassis = 1
+        armor_tech_1 = 1
+        engine_tech_1 = 1
+    }
+}
+if = {
+    limit = { NOT = { has_dlc = "No Step Back" } }
+    set_technology = {
+        gw_tank_equipment = 1
+        basic_light_tank = 1
+    }
 }
