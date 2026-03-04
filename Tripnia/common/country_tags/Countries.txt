@@ -1,0 +1,3 @@
+TRP = "countries/Tripnia.txt"
+BEX = "countries/Bexany.txt"
+VAL = "countries/Valentonia.txt"

@@ -1,0 +1,43 @@
+capital = 192
+#Odesa
+
+#ARMIES
+set_oob = "TRP_1936"
+if = {
+    limit = { has_dlc = "Man the Guns" }
+    set_naval_oob = "TRP_1936_naval_mtg"
+}
+if = {
+    limit = { NOT = { has_dlc = "Man the Guns" } }
+    set_naval_oob = "TRP_1936_naval_legacy"
+}
+if = {
+    limit = { has_dlc = "By Blood Alone" }
+    set_air_oob = "TRP_1936_air_bba"
+}
+if = {
+    limit = { NOT = { has_dlc = "By Blood Alone" } }
+    set_air_oob = "TRP_1936_air_legacy"
+}
+
+#EFFECTS
+set_research_slots = 3
+set_stability = 0.8
+set_war_support = 0.7
+
+add_ideas = {
+    #laws
+    volunteer_only
+    free_trade
+    partial_mobilisation
+}
+
+#RESEARCH AND PRODUCTION
+set_technology = {
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    gw_artillery = 1
+    interwar_antiair = 1
+    fuel_silos = 1
+    basic_train = 1
+}

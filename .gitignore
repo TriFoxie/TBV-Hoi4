@@ -1,0 +1,8 @@
+#ignore all
+*
+
+!/Tripnia/
+!/Tripnia/**
+
+!/Tripnia.mod
+!/.gitignore
