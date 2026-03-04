@@ -29,8 +29,22 @@ set_war_support = 0.9
 add_ideas = {
     #laws
     limited_conscription
-    early_mobilisation
-    autarky
+    partial_economic_mobilisation
+    closed_economy
+}
+
+set_politics = {
+    ruling_party = fascism
+    last_election = 1935.01.01
+    election_frequency = 48
+    elections_allowed = no
+}
+
+set_popularities = {
+    neutrality = 20
+    communism = 20
+    democratic = 20
+    fascism = 40
 }
 
 #RESEARCH AND PRODUCTION

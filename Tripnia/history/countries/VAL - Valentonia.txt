@@ -1,6 +1,50 @@
 capital = 202
 #Minsk
 
+#ARMIES
+set_oob = "VAL_1936"
+if = {
+    limit = { has_dlc = "Man the Guns" }
+    set_naval_oob = "VAL_1936_naval_mtg"
+}
+if = {
+    limit = { NOT = { has_dlc = "Man the Guns" } }
+    set_naval_oob = "VAL_1936_naval_legacy"
+}
+if = {
+    limit = { has_dlc = "By Blood Alone" }
+    set_air_oob = "VAL_1936_air_bba"
+}
+if = {
+    limit = { NOT = { has_dlc = "By Blood Alone" } }
+    set_air_oob = "VAL_1936_air_legacy"
+}
+
+set_research_slots = 3
+set_stability = 0.8
+set_war_support = 0.7
+
+add_ideas = {
+    #laws
+    volunteer_only
+    limited_exports
+    low_economic_mobilisation
+}
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = 1935.01.01
+    election_frequency = 48
+    elections_allowed = yes
+}
+
+set_popularities = {
+    neutrality = 34
+    communism = 22
+    democratic = 22
+    fascism = 22
+}
+
 #RESEARCH AND PRODUCTION
 set_technology = {
     #Logistics

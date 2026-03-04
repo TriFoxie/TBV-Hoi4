@@ -29,7 +29,21 @@ add_ideas = {
     #laws
     volunteer_only
     free_trade
-    partial_mobilisation
+    low_economic_mobilisation
+}
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = 1935.01.01
+    election_frequency = 48
+    elections_allowed = no
+}
+
+set_popularities = {
+    neutrality = 60
+    communism = 20
+    democratic = 15
+    fascism = 5
 }
 
 #RESEARCH AND PRODUCTION
