@@ -1,7 +1,67 @@
 ﻿l_english:
+  #TRIPNIA
   TRP: "Tripnia"
   TRP_DEF: "Tripnia"
   TRP_ADJ: "Tripnian"
+  #ideologies
   TRP_democratic: "Republic of Tripnia"
   TRP_democratic_DEF: "the Republic of Tripnia"
-  TRP_Subject: "$OVERLORDADJ$ Tripnia"
+  TRP_fascist: "The Tripnian Empire"
+  TRP_fascist_DEF: "The Tripnian Empire"
+  TRP_communist: "Socialist Tripnia"
+  TRP_communist_DEF: "Socialist Tripnia"
+  #neutrality default
+  #subject/puppet
+  TRP_subject: "$OVERLORDADJ$ Tripnia"
+  TRP_subject_DEF: "$OVERLORDADJ$ Tripnia"
+  TRP_dominion: "$OVERLORDADJ$ Tripnia"
+  TRP_dominion_DEF: "$OVERLORDADJ$ Tripnia"
+  TRP_colony: "Tripnia of $OVERLORD$"
+  TRP_colony_DEF: "Tripnia of $OVERLORD$"
+  TRP_integrated_puppet: "Tripnia of $OVERLORD$"
+  TRP_integrated_puppet_DEF: "Tripnia of $OVERLORD$"
+
+  #BEXANY
+  BEX: "Bexany"
+  BEX_DEF: "Bexany"
+  BEX_ADJ: "Bexian"
+  #ideologies
+  BEX_democratic: "Democratic Republic of Bexany"
+  BEX_democratic_DEF: "the Democratic Republic of Bexany"
+  BEX_democratic_ADJ: "nice Bexian"
+  BEX_communist: "Bexian Commune"
+  BEX_communist_DEF: "the Bexian Commune"
+  BEX_neutrality: "Independant Bexany"
+  BEX_neutrality_DEF: "Independant Bexany"
+  #fascist default
+  #subject/puppet
+  BEX_subject: "$OVERLORDADJ$ Bexany"
+  BEX_subject_DEF: "$OVERLORDADJ$ Bexany"
+  BEX_dominion: "$OVERLORDADJ$ Bexia"
+  BEX_dominion_DEF: "$OVERLORDADJ$ Bexia"
+  BEX_colony: "Bexany of $OVERLORD$"
+  BEX_colony_DEF: "Bexany of $OVERLORD$"
+  BEX_integrated_puppet: "Bexany of $OVERLORD$"
+  BEX_integrated_puppet_DEF: "Bexany of $OVERLORD$"
+
+  #VALENTONIA
+  VAL: "Valentonia"
+  VAL_DEF: "Valentonia"
+  VAL_ADJ: "Valentine"
+  #ideologies
+  VAL_democratic: "Republic of Valentonia"
+  VAL_democratic_DEF: "the Republic of Valentonia"
+  VAL_communist: "Socialist State of Valentonia"
+  VAL_communist_DEF: "the Socialist State of Valentonia"
+  VAL_fascist: "Black Dragon Valentonia"
+  VAL_fascist_DEF: "the Black Dragon Valentonia"
+  #neutrality default
+  #subject/puppet
+  VAL_subject: "$OVERLORDADJ$ Valentonia"
+  VAL_subject_DEF: "$OVERLORDADJ$ Valentonia"
+  VAL_dominion: "$OVERLORDADJ$ VALia"
+  VAL_dominion_DEF: "$OVERLORDADJ$ VALia"
+  VAL_colony: "Valentonia of $OVERLORD$"
+  VAL_colony_DEF: "Valentonia of $OVERLORD$"
+  VAL_integrated_puppet: "Valentonia of $OVERLORD$"
+  VAL_integrated_puppet_DEF: "Valentonia of $OVERLORD$"
