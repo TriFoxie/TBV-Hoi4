@@ -1,2 +1,68 @@
 capital = 64
 #Berlin
+
+#ARMIES
+set_oob = "BEX_1936"
+if = {
+    limit = { has_dlc = "Man the Guns" }
+    set_naval_oob = "BEX_1936_naval_mtg"
+}
+if = {
+    limit = { NOT = { has_dlc = "Man the Guns" } }
+    set_naval_oob = "BEX_1936_naval_legacy"
+}
+if = {
+    limit = { has_dlc = "By Blood Alone" }
+    set_air_oob = "BEX_1936_air_bba"
+}
+if = {
+    limit = { NOT = { has_dlc = "By Blood Alone" } }
+    set_air_oob = "BEX_1936_air_legacy"
+}
+
+#EFFECTS
+set_research_slots = 4
+set_stability = 0.6
+set_war_support = 0.9
+
+#TODO: Check autarky
+add_ideas = {
+    #laws
+    limited_conscription
+    early_mobilisation
+    autarky
+}
+
+#TODO: Check IDs
+#RESEARCH AND PRODUCTION
+set_technology = {
+    #Army
+    support_equipment = 1
+    engineer_company = 1
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    infantry_weapons2 = 1
+    gw_artillery = 1
+    interwar_antiair = 1
+    interwar_tank = 1
+    light_tank = 1
+
+    #Logistics
+    fuel_silos = 1
+    basic_train = 1
+    armored_train = 1
+
+    #Nuclear
+    nuclear_research = 1
+    missiles = 1
+
+    #Ships
+    early_destroyer = 1
+    early_cruiser = 1
+
+    #Air
+    interwar_fighter = 1
+    early_fighter = 1
+    early_close_air_support = 1
+    early_strategic_bomber = 1
+}
