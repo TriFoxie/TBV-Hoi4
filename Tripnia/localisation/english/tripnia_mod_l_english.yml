@@ -43,6 +43,11 @@
   BEX_colony_DEF: "Bexany of $OVERLORD$"
   BEX_integrated_puppet: "Bexany of $OVERLORD$"
   BEX_integrated_puppet_DEF: "Bexany of $OVERLORD$"
+  #political parties
+  BEX_fascism_party: "Harder Daddy"
+  BEX_communism_party: "Starve Me Daddy"
+  BEX_neutrality_party: "Lazy Bois"
+  BEX_democratic_party: "Please Be Nice Daddy"
 
   #VALENTONIA
   VAL: "Valentonia"
@@ -71,7 +76,7 @@
   BEX_Boders: "Boders"
 
   #TRAITS
-  BEX_Boders_Shark: "Shark"
-  BEX_Boders_Shark_desc: "She's a Shonk."
-  BEX_Boders_Maniac: "Homicidal Maniac"
-  BEX_Boders_Maniac_desc: "Her homicidal tendencies create an volatile but powerful force out of her army."
+  BEX_Shark: "Shark"
+  BEX_Shark_desc: "She's a Shonk."
+  BEX_Maniac: "Homicidal Maniac"
+  BEX_Maniac_desc: "Her homicidal tendencies create an volatile but powerful force out of her army."

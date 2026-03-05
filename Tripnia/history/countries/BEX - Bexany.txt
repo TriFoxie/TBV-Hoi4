@@ -30,6 +30,7 @@ add_ideas = {
     #laws
     limited_conscription
     partial_economic_mobilisation
+    GER_autarky
 }
 
 set_politics = {
@@ -41,7 +42,6 @@ set_politics = {
 
 #Recruit Characters
 recruit_character = BEX_Boders
-promote_character = BEX_Boders
 
 set_popularities = {
     neutrality = 20
@@ -157,3 +157,6 @@ if = {
         basic_light_tank = 1
     }
 }
+
+#SETUP TERRITORY
+#releasables & cores

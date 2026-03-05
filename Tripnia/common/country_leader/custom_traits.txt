@@ -1,0 +1,24 @@
+leader_traits = {
+    BEX_Shark = {
+        random = no
+        navy_speed_factor = 0.2
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+    BEX_Maniac = {
+        random = no
+        stability_factor = -0.3
+        fascism_drift = 0.01
+        war_support_factor = 0.1
+        justify_war_goal_time = -0.5
+        compliance_growth = 0.05
+        generate_wargoal_tension = -0.5
+        join_faction_tension = -0.5
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

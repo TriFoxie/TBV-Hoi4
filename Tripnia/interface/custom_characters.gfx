@@ -1,0 +1,6 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_BEX_Boders"
+        texturefile = "gfx/leaders/BEX/Boders.dds"
+    }
+}

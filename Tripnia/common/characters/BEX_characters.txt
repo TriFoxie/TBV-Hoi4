@@ -1,0 +1,31 @@
+characters = {
+    BEX_Boders = {
+        name = "BEX_Boders"
+        gender = female
+        portraits = {
+            civilian = {
+                large = GFX_BEX_Boders
+            }
+        }
+        country_leader = {
+            ideology = emperor_fascism
+            desc = "Boders is a slightly psychotic shark with an ambitious goal to conquer the planet."
+            traits = { BEX_Shark BEX_Maniac }
+        }
+        country_leader = {
+            ideology = conservatism
+            desc = "Boders is a slightly psychotic shark with an ambitious goal to conquer the planet."
+            traits = { BEX_Shark BEX_Maniac }
+        }
+        country_leader = {
+            ideology = marxism
+            desc = "Boders is a slightly psychotic shark with an ambitious goal to conquer the planet."
+            traits = { BEX_Shark BEX_Maniac }
+        }
+        country_leader = {
+            ideology = despotism
+            desc = "Boders is a slightly psychotic shark with an ambitious goal to conquer the planet."
+            traits = { BEX_Shark BEX_Maniac }
+        }
+    }
+}
