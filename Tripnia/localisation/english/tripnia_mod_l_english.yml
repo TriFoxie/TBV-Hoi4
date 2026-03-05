@@ -65,3 +65,13 @@
   VAL_colony_DEF: "Valentonia of $OVERLORD$"
   VAL_integrated_puppet: "Valentonia of $OVERLORD$"
   VAL_integrated_puppet_DEF: "Valentonia of $OVERLORD$"
+
+  #CHARACTERS
+  #Boders
+  BEX_Boders: "Boders"
+
+  #TRAITS
+  BEX_Boders_Shark: "Shark"
+  BEX_Boders_Shark_desc: "She's a Shonk."
+  BEX_Boders_Maniac: "Homicidal Maniac"
+  BEX_Boders_Maniac_desc: "Her homicidal tendencies create an volatile but powerful force out of her army."

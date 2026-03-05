@@ -25,12 +25,11 @@ set_research_slots = 4
 set_stability = 0.6
 set_war_support = 0.9
 
-#TODO: Check autarky
 add_ideas = {
+    GER_autarky_idea
     #laws
     limited_conscription
     partial_economic_mobilisation
-    closed_economy
 }
 
 set_politics = {
@@ -39,6 +38,10 @@ set_politics = {
     election_frequency = 48
     elections_allowed = no
 }
+
+#Recruit Characters
+recruit_character = BEX_Boders
+promote_character = BEX_Boders
 
 set_popularities = {
     neutrality = 20
