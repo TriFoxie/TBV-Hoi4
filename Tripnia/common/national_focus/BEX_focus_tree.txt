@@ -1,0 +1,840 @@
+focus_tree = {
+	id = bex-focus-tree
+	continuous_focus_position = { x = -40 y = 1180 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = BEX
+		}
+	}
+	#Forge Western Claims
+	focus = {
+		id = BEX_forge_western_claims
+		icon = GFX_BEX_forge_western_claims-262065
+		x = 10
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_agressive_expansionism  }
+	}
+
+	#Sway the workers
+	focus = {
+		id = BEX_sway_the_workers
+		icon = GFX_BEX_sway_the_workers-646000
+		x = 2
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_beatenbutnotgone  }
+	}
+
+	#Arm the workers
+	focus = {
+		id = BEX_arm_the_workers
+		icon = GFX_BEX_arm_the_workers-646001
+		x = 2
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = BEX_sway_the_workers  }
+	}
+
+	#Beaten, but not gone
+	focus = {
+		id = BEX_beatenbutnotgone
+		icon = GFX_BEX_beatenbutnotgone-646334
+		x = 2
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		ai_will_do = { factor = 5 }
+		available = {
+			has_government = fascism
+			
+			
+		}
+		bypass = {
+			has_government = communism
+		}
+		completion_reward = {
+			add_political_power = 100
+			communism_drift = 0.1
+			
+			
+		}
+	}
+
+	#The Final Blow
+	focus = {
+		id = BEX_the_final_blow
+		icon = GFX_focus_BUL_condemn_macedonian_organizations
+		x = 6
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		mutually_exclusive = { focus = BEX_beatenbutnotgone  } mutually_exclusive = { }
+		ai_will_do = { factor = 10 }
+		available = {
+			NOT = { has_government = communism }
+		}
+		completion_reward = {
+			communism_drift = -0.1
+		}
+	}
+
+	#Introduce socialist education
+	focus = {
+		id = BEX_introduce_socialist_education
+		icon = GFX_BEX_introduce_socialist_education-646119
+		x = 0
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_sway_the_workers  }
+	}
+
+	#Follow Germany
+	focus = {
+		id = BEX_follow_germany
+		icon = GFX_BEX_follow_germany-428
+		x = 6
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_final_blow  }
+		mutually_exclusive = { focus = BEX_follow_germany  } mutually_exclusive = { focus = BEX_follow_switzerland  } mutually_exclusive = { focus = BEX_follow_the_uk  }
+	}
+
+	#Follow Switzerland
+	focus = {
+		id = BEX_follow_switzerland
+		icon = GFX_BEX_follow_switzerland-646386
+		x = 19
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_final_blow  }
+		mutually_exclusive = { focus = BEX_follow_germany  } mutually_exclusive = { focus = BEX_follow_switzerland  } mutually_exclusive = { focus = BEX_follow_the_uk  }
+	}
+
+	#Follow The UK
+	focus = {
+		id = BEX_follow_the_uk
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 21
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_final_blow  }
+		mutually_exclusive = { focus = BEX_follow_germany  } mutually_exclusive = { focus = BEX_follow_switzerland  } mutually_exclusive = { }
+	}
+
+	#Establish a council
+	focus = {
+		id = BEX_establish_a_council
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 4
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_sway_the_workers  }
+	}
+
+	#Integrate leftists into government
+	focus = {
+		id = BEX_integrate_leftists_into_government
+		icon = GFX_focus_generic_soviet_politics
+		x = 4
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_establish_a_council  }
+	}
+
+	#Invite the militia
+	focus = {
+		id = BEX_invite_the_militia
+		icon = GFX_BEX_invite_the_militia-645755
+		x = 2
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = BEX_arm_the_workers  }
+	}
+
+	#The second revolution
+	focus = {
+		id = BEX_the_second_revolution
+		icon = GFX_goal_generic_major_war
+		x = 2
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_invite_the_militia  }
+	}
+
+	#A soviet "Union"
+	focus = {
+		id = BEX_asovietunion
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 2
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_second_revolution  }
+	}
+
+	#Bexian Communism
+	focus = {
+		id = BEX_bexian_communism
+		icon = GFX_BEX_bexian_communism-426
+		x = 0
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_second_revolution  }
+		mutually_exclusive = { focus = BEX_asovietunion  } mutually_exclusive = { focus = BEX_bexian_communism  }
+	}
+
+	#Agressive Expansionism
+	focus = {
+		id = BEX_agressive_expansionism
+		icon = GFX_focus_eng_organise_the_blackshirts
+		x = 12
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = BEX_follow_germany  }
+		mutually_exclusive = { focus = BEX_protect_the_fatherland  }
+	}
+
+	#Protect the Fatherland
+	focus = {
+		id = BEX_protect_the_fatherland
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		x = 17
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = BEX_follow_germany  }
+	}
+
+	#The German Embassy
+	focus = {
+		id = BEX_the_german_embassy
+		icon = GFX_focus_chi_mission_to_germany
+		x = 6
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_follow_germany  }
+	}
+
+	#Bexians in Germany
+	focus = {
+		id = BEX_bexians_in_germany
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 6
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_the_german_embassy  }
+	}
+
+	#Claim German Territory
+	focus = {
+		id = BEX_claim_german_territory
+		icon = GFX_BEX_claim_german_territory-646218
+		x = 6
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_bexians_in_germany  }
+	}
+
+	#The German Question
+	focus = {
+		id = BEX_the_german_question
+		icon = GFX_focus_attack_germany
+		x = 6
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_claim_german_territory  }
+	}
+
+	#Forge Eastern Claims
+	focus = {
+		id = BEX_forge_eastern_claims
+		icon = GFX_BEX_forge_eastern_claims-262064
+		x = 14
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_agressive_expansionism  }
+	}
+
+	#The Italian Question
+	focus = {
+		id = BEX_the_italian_question
+		icon = GFX_focus_generic_italy_first
+		x = 8
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_threaten_mario  }
+	}
+
+	#Threaten mario
+	focus = {
+		id = BEX_threaten_mario
+		icon = GFX_BEX_threaten_mario-645947
+		x = 8
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_agressive_expansionism  }
+	}
+
+	#Review Laws
+	focus = {
+		id = BEX_review_laws
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 24
+		y = 0
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Personal Liberty
+	focus = {
+		id = BEX_personal_liberty
+		icon = GFX_goal_continuous_boost_freedom
+		x = 23
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
+		mutually_exclusive = { focus = BEX_government_authority  }
+	}
+
+	#Hungary-Hippos
+	focus = {
+		id = BEX_hungaryhippos
+		icon = GFX_BEX_hungaryhippos-259
+		x = 14
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_forge_eastern_claims  }
+	}
+
+	#Target an Empire
+	focus = {
+		id = BEX_target_an_empire
+		icon = GFX_BEX_target_an_empire-92
+		x = 10
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_forge_western_claims  }
+		available = {
+			NOT = { has_global_flag = spanish_civil_war }
+		}
+	}
+
+	#Operation Stockholm
+	focus = {
+		id = BEX_operation_stockholm
+		icon = GFX_BEX_operation_stockholm-262017
+		x = 12
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_agressive_expansionism  }
+	}
+
+	#Operation Oslo
+	focus = {
+		id = BEX_operation_oslo
+		icon = GFX_BEX_operation_oslo-262015
+		x = 11
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_operation_stockholm  }
+	}
+
+	#The White Death
+	focus = {
+		id = BEX_the_white_death
+		icon = GFX_BEX_the_white_death-262012
+		x = 13
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_operation_stockholm  }
+	}
+
+	#The Bexian North
+	focus = {
+		id = BEX_the_bexian_north
+		icon = GFX_BEX_the_bexian_north-645827
+		x = 12
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_FRA_OCCUPATION_COST
+		}
+		prerequisite = { focus = BEX_operation_stockholm  } prerequisite = { focus = BEX_operation_oslo  } prerequisite = { focus = BEX_the_white_death  }
+	}
+
+	#Bex-Europa
+	focus = {
+		id = BEX_bexeuropa
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		x = 12
+		y = 6
+		search_filters = {
+			FOCUS_FILTER_FRA_OCCUPATION_COST
+		}
+		prerequisite = { focus = BEX_the_german_question  } prerequisite = { focus = BEX_the_italian_question  } prerequisite = { focus = BEX_hungaryhippos  } prerequisite = { focus = BEX_target_an_empire  } prerequisite = { focus = BEX_the_bexian_north  }
+	}
+
+	#Conquer the world
+	focus = {
+		id = BEX_conquer_the_world
+		icon = GFX_goal_unknown
+		x = 12
+		y = 7
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_bexeuropa  }
+	}
+
+	#The Bexian Empire
+	focus = {
+		id = BEX_the_bexian_empire
+		icon = GFX_goal_unknown
+		x = 12
+		y = 8
+		search_filters = {
+			FOCUS_FILTER_FRA_OCCUPATION_COST
+		}
+		prerequisite = { focus = BEX_conquer_the_world  }
+	}
+
+	#A Technological Haven
+	focus = {
+		id = BEX_a_technological_haven
+		icon = GFX_focus_research
+		x = 30
+		y = 0
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+
+	#Defense against the Reds
+	focus = {
+		id = BEX_defense_against_the_reds
+		icon = GFX_BEX_defense_against_the_reds-262068
+		x = 18
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_fortify_eastern_borders  }
+	}
+
+	#Fortify Eastern Borders
+	focus = {
+		id = BEX_fortify_eastern_borders
+		icon = GFX_BEX_fortify_eastern_borders-646313
+		x = 18
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_protect_the_fatherland  }
+	}
+
+	#Fortify Western Borders
+	focus = {
+		id = BEX_fortify_western_borders
+		icon = GFX_BEX_fortify_western_borders-646313
+		x = 16
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_protect_the_fatherland  }
+		bypass = {
+			#Bypass if germany is owned
+		}
+	}
+
+	#Inverted Maginot Line
+	focus = {
+		id = BEX_inverted_maginot_line
+		icon = GFX_BEX_inverted_maginot_line-646371
+		x = 16
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_fortify_western_borders  }
+		available = {
+			#Must own Germany
+		}
+	}
+
+	#Red Reactionaries
+	focus = {
+		id = BEX_red_reactionaries
+		icon = GFX_focus_attack_soviet
+		x = 19
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+		prerequisite = { focus = BEX_defense_against_the_reds  }
+	}
+
+	#Molotov-Ribbentrop Pact
+	focus = {
+		id = BEX_molotovribbentrop_pact
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 17
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_defense_against_the_reds  }
+	}
+
+	#Liberal Economics
+	focus = {
+		id = BEX_liberal_economics
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 25
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_review_laws  }
+	}
+
+	#Regulated Economics
+	focus = {
+		id = BEX_regulated_economics
+		icon = GFX_BEX_regulated_economics-645705
+		x = 23
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_review_laws  }
+		mutually_exclusive = { focus = BEX_liberal_economics  } mutually_exclusive = { }
+	}
+
+	#Government Authority
+	focus = {
+		id = BEX_government_authority
+		icon = GFX_goal_continuous_restrict_freedom
+		x = 25
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
+		mutually_exclusive = { focus = BEX_personal_liberty  }
+	}
+
+	#Militarise Industry
+	focus = {
+		id = BEX_militarise_industry
+		icon = GFX_BEX_militarise_industry-645975
+		x = 27
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_a_technological_haven  }
+	}
+
+	#Civilian Needs
+	focus = {
+		id = BEX_civilian_needs
+		icon = GFX_BEX_civilian_needs-646147
+		x = 31
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_a_technological_haven  }
+	}
+
+	#Scientific Investments
+	focus = {
+		id = BEX_scientific_investments
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 29
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_a_technological_haven  }
+	}
+
+	#A population boom
+	focus = {
+		id = BEX_a_population_boom
+		icon = GFX_BEX_a_population_boom-645969
+		x = 33
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = BEX_a_technological_haven  }
+	}
+
+	#Allow Immigration
+	focus = {
+		id = BEX_allow_immigration
+		icon = GFX_BEX_allow_immigration-645484
+		x = 23
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
+		mutually_exclusive = { focus = BEX_ban_immigration  }
+	}
+
+	#Ban Immigration
+	focus = {
+		id = BEX_ban_immigration
+		icon = GFX_BEX_ban_immigration-646045
+		x = 25
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
+		mutually_exclusive = { focus = BEX_allow_immigration  }
+	}
+
+	#Civilian Factories I
+	focus = {
+		id = BEX_civilian_factories_i
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 30
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_civilian_needs  }
+	}
+
+	#Invite Citizens
+	focus = {
+		id = BEX_invite_citizens
+		icon = GFX_BEX_invite_citizens-645689
+		x = 33
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = BEX_a_population_boom  }
+	}
+
+	#Welcome Global Citizens
+	focus = {
+		id = BEX_welcome_global_citizens
+		icon = GFX_focus_focus_fra_third_empire
+		x = 32
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = BEX_invite_citizens  } prerequisite = { focus = BEX_workers_rights  }
+		available = {
+			#Must have idea "allowed immigration"
+		}
+		completion_reward = {
+			#Massive recruitable population boost
+		}
+	}
+
+	#Expand Weapons Production
+	focus = {
+		id = BEX_expand_weapons_production
+		icon = GFX_focus_generic_combined_arms
+		x = 27
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_militarise_industry  }
+	}
+
+	#Bexian Arsenal
+	focus = {
+		id = BEX_bexian_arsenal
+		icon = GFX_BEX_bexian_arsenal-262051
+		x = 27
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_expand_weapons_production  }
+	}
+
+	#Vehicular Combat
+	focus = {
+		id = BEX_vehicular_combat
+		icon = GFX_BEX_vehicular_combat-645863
+		x = 27
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_bexian_arsenal  }
+	}
+
+	#Weapons of Mass Destruction
+	focus = {
+		id = BEX_weapons_of_mass_destruction
+		icon = GFX_focus_wonderweapons
+		x = 28
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_vehicular_combat  } prerequisite = { focus = BEX_bexian_science_institute  }
+		completion_reward = {
+			#Add big bonus to nuke production and icbm research
+		}
+	}
+
+	#Bringers of Death
+	focus = {
+		id = BEX_bringers_of_death
+		icon = GFX_BEX_bringers_of_death-645948
+		x = 28
+		y = 6
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_weapons_of_mass_destruction  }
+	}
+
+	#Breakthroughs
+	focus = {
+		id = BEX_breakthroughs
+		icon = GFX_focus_research2
+		x = 29
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_scientific_investments  }
+	}
+
+	#Bexian Science Institute
+	focus = {
+		id = BEX_bexian_science_institute
+		icon = GFX_BEX_bexian_science_institute-646187
+		x = 29
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_breakthroughs  }
+	}
+
+	#Housing Developments
+	focus = {
+		id = BEX_housing_developments
+		icon = GFX_BEX_housing_developments-645953
+		x = 31
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = BEX_civilian_factories_i  focus = BEX_civilian_factories_ii  }
+	}
+
+	#Workers Rights
+	focus = {
+		id = BEX_workers_rights
+		icon = GFX_BEX_workers_rights-646000
+		x = 31
+		y = 4
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_housing_developments  }
+	}
+
+	#Worker Efficiency
+	focus = {
+		id = BEX_worker_efficiency
+		icon = GFX_BEX_worker_efficiency-645742
+		x = 30
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_workers_rights  } prerequisite = { focus = BEX_bexian_science_institute  }
+	}
+
+	#Civilian Factories II
+	focus = {
+		id = BEX_civilian_factories_ii
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 32
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_civilian_needs  }
+	}
+
+}

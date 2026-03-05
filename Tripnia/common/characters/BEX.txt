@@ -1,0 +1,44 @@
+characters = {
+    BEX_Boders = {
+        name = "BEX_Boders"
+        portraits = {
+            civilian = {
+                large = "gfx/leaders/BEX/Boders.dds"
+            }
+        }
+        country_leader = {
+            ideology = nazism
+            traits = {
+                BEX_Boders_Shark
+                BEX_Boders_Maniac
+            }
+        }
+        country_leader = {
+            ideology = conservatism
+            traits = {
+                BEX_Boders_Shark
+                BEX_Boders_Maniac
+            }
+        }
+        country_leader = {
+            ideology = marxism
+            traits = {
+                BEX_Boders_Shark
+                BEX_Boders_Maniac
+            }
+        }
+        country_leader = {
+            ideology = despotism
+            traits = {
+                BEX_Boders_Shark
+                BEX_Boders_Maniac
+            }
+        }
+        advisor = {
+            traits = {
+                BEX_Boders_Shark
+                BEX_Boders_Maniac
+            }
+        }
+    }
+}
