@@ -228,44 +228,6 @@ spriteTypes = {	##Icon For:
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_BEX_follow_switzerland-646386"
-		texturefile = "gfx/interface/goals/GFX_BEX_follow_switzerland-646386.dds"
-	}
-
-	##Icon Shine For: 
-	SpriteType = { 
-		name = "GFX_BEX_follow_switzerland-646386_shine"
-		texturefile = "gfx/interface/goals/GFX_BEX_follow_switzerland-646386.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/GFX_BEX_follow_switzerland-646386.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		animation = {
-			animationmaskfile = "gfx/interface/goals/GFX_BEX_follow_switzerland-646386.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-
-	##Icon For: 
-	SpriteType = { 
 		name = "GFX_BEX_invite_the_militia-645755"
 		texturefile = "gfx/interface/goals/GFX_BEX_invite_the_militia-645755.dds"
 	}
@@ -1353,6 +1315,44 @@ spriteTypes = {	##Icon For:
 		}
 		animation = {
 			animationmaskfile = "gfx/interface/goals/GFX_BEX_worker_efficiency-645742.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_BEX_british_naval_help-646191"
+		texturefile = "gfx/interface/goals/GFX_BEX_british_naval_help-646191.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = { 
+		name = "GFX_BEX_british_naval_help-646191_shine"
+		texturefile = "gfx/interface/goals/GFX_BEX_british_naval_help-646191.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_BEX_british_naval_help-646191.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_BEX_british_naval_help-646191.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
