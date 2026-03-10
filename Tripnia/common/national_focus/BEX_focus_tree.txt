@@ -8,8 +8,305 @@ focus_tree = {
 			tag = BEX
 		}
 	}
+
+	# # BEATEN BUT NOT GONE # #
+	#TODO add focus times
+
+	#Beaten, but not gone
+    focus = {
+        id = BEX_beatenbutnotgone
+        icon = GFX_BEX_beatenbutnotgone-646334
+        x = 26
+        y = 0
+        cost = 5
+        search_filters = {
+            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+        }
+        mutually_exclusive = { focus = BEX_the_final_blow  }
+        ai_will_do = { factor = 5 }
+        available = {
+            has_government = fascism
+        }
+        completion_reward = {
+            add_political_power = 100
+            add_ideas = BEX_communist_revolutionaries_idea
+            set_variable = { var = BEX_communism_acceptance_var }
+        }
+    }
+
+    #Sway the workers
+    focus = {
+        id = BEX_sway_the_workers
+        icon = GFX_BEX_sway_the_workers-646000
+        x = 26
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_beatenbutnotgone  }
+        completion_reward = {
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 10
+            }
+            swap_ideas = {
+                remove_idea = BEX_communist_revolutionaries_idea
+                add_idea = BEX_communist_revolutionaries_idea_2
+            }
+        }
+    }
+
+    #Introduce socialist education
+    #TODO fix image
+    focus = {
+        id = BEX_introduce_socialist_education
+        icon = GFX_BEX_introduce_socialist_education-646119
+        x = 24
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_sway_the_workers  }
+        completion_reward = {
+            add_ideas = BEX_socialist_education_idea
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 20
+            }
+        }
+    }
+
+    #Establish a council
+    focus = {
+        id = BEX_establish_a_council
+        icon = GFX_focus_hol_the_foundations_of_defense
+        x = 28
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_sway_the_workers  }
+        completion_reward = {
+            add_political_power = 25
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 5
+            }
+        }
+    }
+
+    #Integrate leftists into government
+    focus = {
+        id = BEX_integrate_leftists_into_government
+        icon = GFX_focus_generic_soviet_politics
+        x = 28
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_establish_a_council  }
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = BEX_leftists_in_government_idea
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 25
+            }
+        }
+    }
+
+    #Arm the workers
+    focus = {
+        id = BEX_arm_the_workers
+        icon = GFX_BEX_arm_the_workers-646001
+        x = 26
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+        }
+        prerequisite = { focus = BEX_sway_the_workers  }
+        completion_reward = {
+            add_stability = -0.1
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 20
+            }
+        }
+    }
+
+    #Invite the militia
+    focus = {
+        id = BEX_invite_the_militia
+        icon = GFX_BEX_invite_the_militia-645755
+        x = 26
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+        }
+        prerequisite = { focus = BEX_arm_the_workers  }
+        completion_reward = {
+            add_stability = -0.01
+            add_to_variable = {
+                var = BEX_communism_acceptance_var
+                value = 20
+            }
+        }
+    }
+
+    #Peaceful Transition
+    focus = {
+        id = BEX_a_peaceful_transition
+        icon = GFX_goal_generic_major_war
+        x = 27
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_invite_the_militia  }
+        mutually_exclusive = { focus = BEX_the_second_revolution }
+        available = {
+            communism > 0.5
+            check_variable = {
+                var = BEX_communism_acceptance_var
+                value = 95
+                compare = greater_than_or_equals
+            }
+        }
+        completion_reward = {
+            set_politics = {
+                ruling_party = communism
+                elections_allowed = no
+            }
+        }
+    }
+
+    #Second revolution
+    focus = { #TODO code focus (Civil war)
+        id = BEX_the_second_revolution
+        icon = GFX_goal_generic_major_war
+        x = 25
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_invite_the_militia  }
+        mutually_exclusive = { focus = BEX_a_peaceful_transition }
+        available = {
+            communism > 0.5
+            check_variable = {
+                var = BEX_communism_acceptance_var
+                value = 95
+                compare = less_than_or_equals
+            }
+        }
+    }
+
+    #A soviet 'Union' TODO fix image
+    focus = {
+        id = BEX_asovietunion
+        icon = GFX_focus_chi_mission_to_the_soviet_union
+        x = 27
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_the_second_revolution focus = BEX_a_peaceful_transition }
+        available = {
+            country_exists = SOV
+            NOT = { is_in_faction = yes }
+        }
+        mutually_exclusive = { focus = BEX_bexian_communism  }
+        completion_reward = {
+            add_ideas = BEX_a_soviet_union_idea
+            #TODO add bexany to the comintern
+        }
+    }
+
+    #Bexian Communism
+    focus = { #TODO code focus
+        id = BEX_bexian_communism
+        icon = GFX_BEX_bexian_communism-426
+        x = 25
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_the_second_revolution focus = BEX_a_peaceful_transition }
+        mutually_exclusive = { focus = BEX_asovietunion  }
+        completion_reward = {
+            add_ideas = BEX_bexian_communism_idea
+        }
+    }
+
+    # # --------------------------------------------------- # #
+
+    # # REVIEW LAWS # #
+
+    #Review Laws
+    focus = {
+        id = BEX_review_laws
+        icon = GFX_focus_fra_devalue_the_franc
+        x = 1
+        y = 7
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        completion_reward = {
+            add_political_power = 25
+        }
+    }
+
+    #Regulated Economics
+    focus = {
+        id = BEX_regulated_economics
+        icon = GFX_BEX_regulated_economics-645705
+        x = 0
+        y = 8
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_review_laws  }
+        mutually_exclusive = { focus = BEX_liberal_economics  }
+        completion_reward = {
+            add_ideas = BEX_regulated_economics
+        }
+    }
+
+    #Liberal Economics
+    focus = {
+        id = BEX_liberal_economics
+        icon = GFX_focus_usa_reestablish_the_gold_standard
+        x = 2
+        y = 8
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_review_laws  }
+        completion_reward = {
+            add_ideas = BEX_liberal_economics
+        }
+    }
+
+    #Personal Liberty
+    focus = {
+        id = BEX_personal_liberty
+        icon = GFX_goal_continuous_boost_freedom
+        x = 0
+        y = 9
+        search_filters = {
+            FOCUS_FILTER_STABILITY
+        }
+        prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
+        mutually_exclusive = { focus = BEX_government_authority  }
+        completion_reward = {
+            
+        }
+    }
+
+    # # --------------------------------------------------- # #
+
 	#Forge Western Claims
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_forge_western_claims
 		icon = GFX_BEX_forge_western_claims-262065
 		x = 12
@@ -20,60 +317,8 @@ focus_tree = {
 		prerequisite = { focus = BEX_agressive_expansionism  }
 	}
 
-	#Sway the workers
-	focus = {
-		id = BEX_sway_the_workers
-		icon = GFX_BEX_sway_the_workers-646000
-		x = 26
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_beatenbutnotgone  }
-	}
-
-	#Arm the workers
-	focus = {
-		id = BEX_arm_the_workers
-		icon = GFX_BEX_arm_the_workers-646001
-		x = 26
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = BEX_sway_the_workers  }
-	}
-
-	#Beaten, but not gone
-	focus = {
-		id = BEX_beatenbutnotgone
-		icon = GFX_BEX_beatenbutnotgone-646334
-		x = 26
-		y = 0
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		mutually_exclusive = { focus = BEX_the_final_blow  }
-		ai_will_do = { factor = 5 }
-		available = {
-			has_government = fascism
-			
-			
-		}
-		bypass = {
-			has_government = communism
-		}
-		completion_reward = {
-			add_political_power = 100
-			communism_drift = 0.1
-			
-			
-		}
-	}
-
 	#The Final Blow
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_final_blow
 		icon = GFX_focus_BUL_condemn_macedonian_organizations
 		x = 17
@@ -92,20 +337,8 @@ focus_tree = {
 		}
 	}
 
-	#Introduce socialist education
-	focus = {
-		id = BEX_introduce_socialist_education
-		icon = GFX_BEX_introduce_socialist_education-646119
-		x = 24
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_sway_the_workers  }
-	}
-
 	#Follow Germany
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_follow_germany
 		icon = GFX_BEX_follow_germany-428
 		x = 17
@@ -118,7 +351,7 @@ focus_tree = {
 	}
 
 	#Integrating Russia
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_integrating_russia
 		icon = GFX_focus_generic_soviet_politics
 		x = 20
@@ -133,7 +366,7 @@ focus_tree = {
 	}
 
 	#Baguette Treaty
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_baguette_treaty
 		icon = GFX_focus_chi_reach_out_to_france
 		x = 18
@@ -147,81 +380,8 @@ focus_tree = {
 		}
 	}
 
-	#Establish a council
-	focus = {
-		id = BEX_establish_a_council
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 28
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_sway_the_workers  }
-	}
-
-	#Integrate leftists into government
-	focus = {
-		id = BEX_integrate_leftists_into_government
-		icon = GFX_focus_generic_soviet_politics
-		x = 28
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_establish_a_council  }
-	}
-
-	#Invite the militia
-	focus = {
-		id = BEX_invite_the_militia
-		icon = GFX_BEX_invite_the_militia-645755
-		x = 26
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = { focus = BEX_arm_the_workers  }
-	}
-
-	#The second revolution
-	focus = {
-		id = BEX_the_second_revolution
-		icon = GFX_goal_generic_major_war
-		x = 26
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_invite_the_militia  }
-	}
-
-	#A soviet "Union"
-	focus = {
-		id = BEX_asovietunion
-		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 27
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_the_second_revolution  }
-	}
-
-	#Bexian Communism
-	focus = {
-		id = BEX_bexian_communism
-		icon = GFX_BEX_bexian_communism-426
-		x = 25
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_the_second_revolution  }
-		mutually_exclusive = { focus = BEX_asovietunion  } mutually_exclusive = { focus = BEX_bexian_communism  }
-	}
-
 	#Agressive Expansionism
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_agressive_expansionism
 		icon = GFX_focus_eng_organise_the_blackshirts
 		x = 14
@@ -234,7 +394,7 @@ focus_tree = {
 	}
 
 	#Protect the Fatherland
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_protect_the_fatherland
 		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
 		x = 20
@@ -246,7 +406,7 @@ focus_tree = {
 	}
 
 	#The German Embassy
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_german_embassy
 		icon = GFX_focus_chi_mission_to_germany
 		x = 8
@@ -257,7 +417,7 @@ focus_tree = {
 	}
 
 	#Bexians in Germany
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_bexians_in_germany
 		icon = GFX_focus_ger_revive_kaiserreich
 		x = 8
@@ -269,7 +429,7 @@ focus_tree = {
 	}
 
 	#Claim German Territory
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_claim_german_territory
 		icon = GFX_BEX_claim_german_territory-646218
 		x = 8
@@ -281,7 +441,7 @@ focus_tree = {
 	}
 
 	#The German Question
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_german_question
 		icon = GFX_focus_attack_germany
 		x = 8
@@ -293,7 +453,7 @@ focus_tree = {
 	}
 
 	#Forge Eastern Claims
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_forge_eastern_claims
 		icon = GFX_BEX_forge_eastern_claims-262064
 		x = 16
@@ -305,7 +465,7 @@ focus_tree = {
 	}
 
 	#The Italian Question
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_italian_question
 		icon = GFX_focus_generic_italy_first
 		x = 10
@@ -317,7 +477,7 @@ focus_tree = {
 	}
 
 	#Threaten mario
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_threaten_mario
 		icon = GFX_BEX_threaten_mario-645947
 		x = 10
@@ -328,32 +488,8 @@ focus_tree = {
 		prerequisite = { focus = BEX_follow_germany  }
 	}
 
-	#Review Laws
-	focus = {
-		id = BEX_review_laws
-		icon = GFX_focus_fra_devalue_the_franc
-		x = 1
-		y = 7
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-
-	#Personal Liberty
-	focus = {
-		id = BEX_personal_liberty
-		icon = GFX_goal_continuous_boost_freedom
-		x = 0
-		y = 9
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-		prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
-		mutually_exclusive = { focus = BEX_government_authority  }
-	}
-
 	#Hungary-Hippos
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_hungaryhippos
 		icon = GFX_BEX_hungaryhippos-259
 		x = 16
@@ -365,7 +501,7 @@ focus_tree = {
 	}
 
 	#Target an Empire
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_target_an_empire
 		icon = GFX_BEX_target_an_empire-92
 		x = 12
@@ -380,7 +516,7 @@ focus_tree = {
 	}
 
 	#Operation Stockholm
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_operation_stockholm
 		icon = GFX_BEX_operation_stockholm-262017
 		x = 14
@@ -392,7 +528,7 @@ focus_tree = {
 	}
 
 	#Operation Oslo
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_operation_oslo
 		icon = GFX_BEX_operation_oslo-262015
 		x = 13
@@ -404,7 +540,7 @@ focus_tree = {
 	}
 
 	#The White Death
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_white_death
 		icon = GFX_BEX_the_white_death-262012
 		x = 15
@@ -416,7 +552,7 @@ focus_tree = {
 	}
 
 	#The Bexian North
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_bexian_north
 		icon = GFX_BEX_the_bexian_north-645827
 		x = 14
@@ -428,7 +564,7 @@ focus_tree = {
 	}
 
 	#Bex-Europa
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_bexeuropa
 		icon = GFX_focus_BUL_prussia_of_the_balkans
 		x = 14
@@ -443,7 +579,7 @@ focus_tree = {
 	}
 
 	#The Sea Lion
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_sea_lion
 		icon = GFX_focus_chi_british_cooperation
 		x = 22
@@ -458,7 +594,7 @@ focus_tree = {
 	}
 
 	#A Technological Haven
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_a_technological_haven
 		icon = GFX_focus_research
 		x = 3
@@ -469,7 +605,7 @@ focus_tree = {
 	}
 
 	#Defense against the Reds
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_defense_against_the_reds
 		icon = GFX_BEX_defense_against_the_reds-262068
 		x = 20
@@ -481,7 +617,7 @@ focus_tree = {
 	}
 
 	#Fortify Eastern Borders
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_fortify_eastern_borders
 		icon = GFX_BEX_fortify_eastern_borders-646313
 		x = 20
@@ -493,7 +629,7 @@ focus_tree = {
 	}
 
 	#Fortify Western Borders
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_fortify_western_borders
 		icon = GFX_BEX_fortify_western_borders-646313
 		x = 18
@@ -508,7 +644,7 @@ focus_tree = {
 	}
 
 	#Inverted Maginot Line
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_inverted_maginot_line
 		icon = GFX_BEX_inverted_maginot_line-646371
 		x = 18
@@ -523,7 +659,7 @@ focus_tree = {
 	}
 
 	#Red Reactionaries
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_red_reactionaries
 		icon = GFX_focus_attack_soviet
 		x = 21
@@ -536,7 +672,7 @@ focus_tree = {
 	}
 
 	#Molotov-Ribbentrop Pact
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_molotovribbentrop_pact
 		icon = GFX_goal_molotov_ribbentrop_pact
 		x = 19
@@ -548,33 +684,8 @@ focus_tree = {
 		mutually_exclusive = { focus = BEX_red_reactionaries  }
 	}
 
-	#Liberal Economics
-	focus = {
-		id = BEX_liberal_economics
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 2
-		y = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_review_laws  }
-	}
-
-	#Regulated Economics
-	focus = {
-		id = BEX_regulated_economics
-		icon = GFX_BEX_regulated_economics-645705
-		x = 0
-		y = 8
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_review_laws  }
-		mutually_exclusive = { focus = BEX_liberal_economics  } mutually_exclusive = { }
-	}
-
 	#Government Authority
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_government_authority
 		icon = GFX_goal_continuous_restrict_freedom
 		x = 2
@@ -587,7 +698,7 @@ focus_tree = {
 	}
 
 	#Militarise Industry
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_militarise_industry
 		icon = GFX_BEX_militarise_industry-645975
 		x = 0
@@ -599,7 +710,7 @@ focus_tree = {
 	}
 
 	#Civilian Needs
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_civilian_needs
 		icon = GFX_BEX_civilian_needs-646147
 		x = 4
@@ -611,7 +722,7 @@ focus_tree = {
 	}
 
 	#Scientific Investments
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_scientific_investments
 		icon = GFX_goal_tfv_generic_tech_sharing
 		x = 2
@@ -623,7 +734,7 @@ focus_tree = {
 	}
 
 	#A population boom
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_a_population_boom
 		icon = GFX_BEX_a_population_boom-645969
 		x = 6
@@ -635,7 +746,7 @@ focus_tree = {
 	}
 
 	#Allow Immigration
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_allow_immigration
 		icon = GFX_BEX_allow_immigration-645484
 		x = 0
@@ -648,7 +759,7 @@ focus_tree = {
 	}
 
 	#Ban Immigration
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_ban_immigration
 		icon = GFX_BEX_ban_immigration-646045
 		x = 2
@@ -661,7 +772,7 @@ focus_tree = {
 	}
 
 	#Civilian Factories I
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_civilian_factories_i
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 3
@@ -673,7 +784,7 @@ focus_tree = {
 	}
 
 	#Invite Citizens
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_invite_citizens
 		icon = GFX_BEX_invite_citizens-645689
 		x = 6
@@ -685,7 +796,7 @@ focus_tree = {
 	}
 
 	#Welcome Global Citizens
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_welcome_global_citizens
 		icon = GFX_focus_focus_fra_third_empire
 		x = 5
@@ -703,7 +814,7 @@ focus_tree = {
 	}
 
 	#Expand Weapons Production
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_expand_weapons_production
 		icon = GFX_focus_generic_combined_arms
 		x = 0
@@ -715,7 +826,7 @@ focus_tree = {
 	}
 
 	#Bexian Arsenal
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_bexian_arsenal
 		icon = GFX_BEX_bexian_arsenal-262051
 		x = 0
@@ -727,7 +838,7 @@ focus_tree = {
 	}
 
 	#Vehicular Combat
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_vehicular_combat
 		icon = GFX_BEX_vehicular_combat-645863
 		x = 0
@@ -739,7 +850,7 @@ focus_tree = {
 	}
 
 	#Weapons of Mass Destruction
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_weapons_of_mass_destruction
 		icon = GFX_focus_wonderweapons
 		x = 1
@@ -754,7 +865,7 @@ focus_tree = {
 	}
 
 	#Bringers of Death
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_bringers_of_death
 		icon = GFX_BEX_bringers_of_death-645948
 		x = 1
@@ -766,7 +877,7 @@ focus_tree = {
 	}
 
 	#Breakthroughs
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_breakthroughs
 		icon = GFX_focus_research2
 		x = 2
@@ -778,7 +889,7 @@ focus_tree = {
 	}
 
 	#Bexian Science Institute
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_bexian_science_institute
 		icon = GFX_BEX_bexian_science_institute-646187
 		x = 2
@@ -790,7 +901,7 @@ focus_tree = {
 	}
 
 	#Housing Developments
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_housing_developments
 		icon = GFX_BEX_housing_developments-645953
 		x = 4
@@ -802,7 +913,7 @@ focus_tree = {
 	}
 
 	#Workers Rights
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_workers_rights
 		icon = GFX_BEX_workers_rights-646000
 		x = 4
@@ -814,7 +925,7 @@ focus_tree = {
 	}
 
 	#Worker Efficiency
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_worker_efficiency
 		icon = GFX_BEX_worker_efficiency-645742
 		x = 3
@@ -826,7 +937,7 @@ focus_tree = {
 	}
 
 	#Civilian Factories II
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_civilian_factories_ii
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 5
@@ -838,7 +949,7 @@ focus_tree = {
 	}
 
 	#A Truce
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_a_truce
 		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
 		x = 22
@@ -850,7 +961,7 @@ focus_tree = {
 	}
 
 	#British Naval Help
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_british_naval_help
 		icon = GFX_BEX_british_naval_help-646191
 		x = 22
@@ -865,7 +976,7 @@ focus_tree = {
 	}
 
 	#The Eurasian Protectorate
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_eurasian_protectorate
 		icon = GFX_focus_usa_focus_on_europe
 		x = 20
@@ -881,7 +992,7 @@ focus_tree = {
 	}
 
 	#The Queen
-	focus = {
+	focus = { #TODO code focus
 		id = BEX_the_queen
 		icon = GFX_goal_unknown
 		x = 19

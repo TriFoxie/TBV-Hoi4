@@ -1,0 +1,16 @@
+﻿l_english:
+  #BEXANY
+  #communist revolutionaries
+  BEX_communist_revolutionaries_idea: "Communist Revolutionaries I"
+  BEX_communist_revolutionaries_idea_desc: "What happens when the last sparks of revolution aren't fully quenched?\n\nCurrent acceptance of communism: [?BEX_communism_acceptance_var]%\nComplete focuses before the revolution to raise this and avoid war."
+  BEX_communist_revolutionaries_idea_2: "Communist Revolutionaries II"
+  BEX_communist_revolutionaries_idea_2_desc: "What happens when the last sparks of revolution aren't fully quenched?\n\nCurrent acceptance of communism: [?BEX_communism_acceptance_var]%\nComplete focuses before the revolution to raise this and avoid war."
+  #socialist education
+  BEX_socialist_education_idea: "Socialist Education"
+  BEX_socialist_education_idea_desc: "A byproduct of us increasing education to spread our message, is that more students have access to education, and therefore become smarter."
+  #leftists in government
+  BEX_leftists_in_government_idea: "Leftists in Government"
+  BEX_leftists_in_government_idea_desc: "We have incorporated socialism-inclined politicians into the government."
+  #a soviet union
+  BEX_a_soviet_union_idea: "A Soviet 'Union'"
+  BEX_a_soviet_union_idea_desc: "Having allied with the soviets, we now stand better ground for protection and progress."

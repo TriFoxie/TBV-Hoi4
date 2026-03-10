@@ -1,0 +1,111 @@
+ideas = {
+    country = {
+
+        # # BEATEN BUT NOT GONE # #
+
+        BEX_communist_revolutionaries_idea = {
+            picture = trotskyite_plot
+
+            on_add = {
+                add_stability = -0.3
+            }
+
+            modifier = {
+                communism_drift = 0.1
+                stability_factor = -0.2
+            }
+
+            cancel = {
+                has_government = communism
+            }
+        }
+        BEX_communist_revolutionaries_idea_2 = {
+            picture = trotskyite_plot
+
+            on_add = {
+                add_stability = -0.3
+            }
+
+            modifier = {
+                communism_drift = 0.2
+                stability_factor = -0.1
+                production_speed_buildings_factor = -0.2
+            }
+
+            cancel = {
+                has_government = communism
+            }
+        }
+
+        BEX_socialist_education_idea = {
+            picture = GFX_BEX_introduce_socialist_education-646119
+
+            on_add = {
+                add_stability = 0.6
+            }
+
+            modifier = {
+                research_speed_factor = 0.5
+                conscription_factor = -0.05
+            }
+        }
+
+        BEX_leftists_in_government_idea = {
+            picture = ast_abandon_the_westminster_system_communism
+
+            on_add = {
+                add_stability = 0.5
+            }
+
+            modifier = {
+                political_power_gain = 0.1
+                communism_drift = 0.2
+            }
+
+            cancel = {
+                has_government = communism
+            }
+        }
+
+        BEX_a_soviet_union_idea = {
+            picture = GFX_focus_chi_mission_to_the_soviet_union
+
+            on_add = {
+                add_stability = 0.3
+            }
+
+            modifier = {
+                subjects_autonomy_gain = -5
+                political_power_gain = 1
+            }
+        }
+
+        # # --------------------------------------------------- # #
+
+        # # REVIEW LAWS # #
+
+        BEX_regulated_economics = {
+            picture = GFX_BEX_regulated_economics-645705
+            modifier = {
+                political_power_gain_factor = -0.1
+                consumer_goods_factor = -0.2
+                industrial_capacity_factory = 0.2
+                industrial_capacity_dockyard = 0.2
+                production_speed_buildings_factor = -0.2
+            }
+        }
+
+        BEX_liberal_economics = {
+            picture = GFX_focus_usa_reestablish_the_gold_standard
+            modifier = {
+                political_power_gain_factor = 0.1
+                consumer_goods_factor = 0.1
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+                production_speed_buildings_factor = 0.2
+            }
+        }
+
+        # # --------------------------------------------------- # #
+    }
+}
