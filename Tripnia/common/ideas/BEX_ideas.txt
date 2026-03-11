@@ -1,6 +1,6 @@
 ideas = {
     country = {
-        #TODO ALL fix pictures
+        #TODO Broken pics: Threaten Mario, Regulated Economics, Liberal Economics, Personal Liberty, Ban Immigration
         # # BEATEN BUT NOT GONE # #
 
         BEX_communist_revolutionaries_idea = {
@@ -38,7 +38,7 @@ ideas = {
         }
 
         BEX_socialist_education_idea = {
-            picture = GFX_BEX_introduce_socialist_education-646119
+            picture = send_attache
 
             on_add = {
                 add_stability = 0.6
@@ -68,7 +68,7 @@ ideas = {
         }
 
         BEX_a_soviet_union_idea = {
-            picture = GFX_focus_chi_mission_to_the_soviet_union
+            picture = generic_communism_drift_bonus
 
             on_add = {
                 add_stability = 0.3
@@ -85,7 +85,7 @@ ideas = {
         # # REVIEW LAWS # #
 
         BEX_regulated_economics_idea = {
-            picture = GFX_BEX_regulated_economics-645705
+            picture = state_economy
             modifier = {
                 political_power_gain_factor = -0.1
                 consumer_goods_factor = -0.2
@@ -96,7 +96,7 @@ ideas = {
         }
 
         BEX_liberal_economics_idea = {
-            picture = GFX_focus_usa_reestablish_the_gold_standard
+            picture = generic_coins
             modifier = {
                 political_power_gain_factor = 0.1
                 consumer_goods_factor = 0.1
@@ -107,7 +107,7 @@ ideas = {
         }
 
         BEX_personal_liberty_idea = {
-            picture = GFX_goal_continuous_boost_freedom
+            picture = FRA_communard_spirit
             modifier = {
                 stability_weekly = 0.01
                 consumer_goods_factor = 0.05
@@ -115,7 +115,7 @@ ideas = {
         }
 
         BEX_government_authority_idea = {
-            picture = GFX_goal_continuous_restrict_freedom
+            picture = generic_oppression
             modifier = {
                 stability_weekly_factor = -0.01
                 consumer_goods_factor = -0.05
@@ -123,7 +123,7 @@ ideas = {
         }
 
         BEX_allow_immigration_idea = {
-            picture = GFX_BEX_allow_immigration-645484
+            picture = generic_manpower_bonus
             modifier = {
                 conscription = 0.05
                 consumer_goods_factor = 0.01
@@ -131,7 +131,7 @@ ideas = {
         }
 
         BEX_ban_immigration_idea = {
-            picture = GFX_BEX_ban_immigration-646045
+            picture = IRE_catholic
             modifier = {
                 consumer_goods_factor = -0.05
             }
@@ -142,6 +142,7 @@ ideas = {
         # # FASCISM PATH # #
 
         BEX_the_final_blow_idea = {
+            picture = anti_soviet_pact
             modifier = {
                 communism_drift = -0.1
             }
@@ -150,14 +151,15 @@ ideas = {
         # # FOLLOW GERMANY # #
 
         BEX_follow_germany_idea = {
+            picture = generic_fascism_drift_bonus
             modifier = {
                 fascism_drift = 0.05
             }
         }
 
         BEX_threaten_mario_timed = {
+            picture = big_entente_idea
             modifier = {
-                industrial_capacity_factory = 0.5
                 conscription = 0.05
                 training_time_factor = 1
                 minimum_training_level = -0.5
@@ -165,16 +167,17 @@ ideas = {
 
             cancel = {
                 OR = {
-                    any_owned_state = { original_tag = ITA }
-                    any_occupied_state = { original_tag = ITA }
-                    any_controlled_state = { original_tag = ITA }
+                    any_owned_state = { is_core_of = ITA }
+                    any_controlled_state = { is_core_of = ITA }
                     any_allied_country = { original_tag = ITA }
                     any_subject_country = { original_tag = ITA }
+                    has_war = yes
                 }
             }
         }
 
         BEX_aggressive_expansionism_idea = {
+            picture = saf_ossewabrandwag_2 #TODO use 'saf_ossewabrandwag' for the defense path picture
             modifier = {
                 army_attack_factor = 0.5
                 army_defence_factor = -0.1
