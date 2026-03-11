@@ -1,6 +1,6 @@
 ideas = {
     country = {
-
+        #TODO ALL fix pictures
         # # BEATEN BUT NOT GONE # #
 
         BEX_communist_revolutionaries_idea = {
@@ -84,7 +84,7 @@ ideas = {
 
         # # REVIEW LAWS # #
 
-        BEX_regulated_economics = {
+        BEX_regulated_economics_idea = {
             picture = GFX_BEX_regulated_economics-645705
             modifier = {
                 political_power_gain_factor = -0.1
@@ -95,7 +95,7 @@ ideas = {
             }
         }
 
-        BEX_liberal_economics = {
+        BEX_liberal_economics_idea = {
             picture = GFX_focus_usa_reestablish_the_gold_standard
             modifier = {
                 political_power_gain_factor = 0.1
@@ -103,6 +103,86 @@ ideas = {
                 industrial_capacity_factory = 0.05
                 industrial_capacity_dockyard = 0.05
                 production_speed_buildings_factor = 0.2
+            }
+        }
+
+        BEX_personal_liberty_idea = {
+            picture = GFX_goal_continuous_boost_freedom
+            modifier = {
+                stability_weekly = 0.01
+                consumer_goods_factor = 0.05
+            }
+        }
+
+        BEX_government_authority_idea = {
+            picture = GFX_goal_continuous_restrict_freedom
+            modifier = {
+                stability_weekly_factor = -0.01
+                consumer_goods_factor = -0.05
+            }
+        }
+
+        BEX_allow_immigration_idea = {
+            picture = GFX_BEX_allow_immigration-645484
+            modifier = {
+                conscription = 0.05
+                consumer_goods_factor = 0.01
+            }
+        }
+
+        BEX_ban_immigration_idea = {
+            picture = GFX_BEX_ban_immigration-646045
+            modifier = {
+                consumer_goods_factor = -0.05
+            }
+        }
+
+        # # --------------------------------------------------- # #
+
+        # # FASCISM PATH # #
+
+        BEX_the_final_blow_idea = {
+            modifier = {
+                communism_drift = -0.1
+            }
+        }
+
+        # # FOLLOW GERMANY # #
+
+        BEX_follow_germany_idea = {
+            modifier = {
+                fascism_drift = 0.05
+            }
+        }
+
+        BEX_threaten_mario_timed = {
+            modifier = {
+                industrial_capacity_factory = 0.5
+                conscription = 0.05
+                training_time_factor = 1
+                minimum_training_level = -0.5
+            } #Lets you pump out lots of troops quickly to meet the focus requirements faster.
+
+            cancel = {
+                OR = {
+                    any_owned_state = { original_tag = ITA }
+                    any_occupied_state = { original_tag = ITA }
+                    any_controlled_state = { original_tag = ITA }
+                    any_allied_country = { original_tag = ITA }
+                    any_subject_country = { original_tag = ITA }
+                }
+            }
+        }
+
+        BEX_aggressive_expansionism_idea = {
+            modifier = {
+                army_attack_factor = 0.5
+                army_defence_factor = -0.1
+                army_core_attack_factor = 1
+                non_core_manpower = 0.3
+                offensive_war_stability_factor = 0.5
+                defensive_war_stability_factor = -0.5
+                war_support_weekly = 0.01
             }
         }
 

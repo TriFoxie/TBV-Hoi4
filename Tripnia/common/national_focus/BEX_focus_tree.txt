@@ -1,6 +1,6 @@
 focus_tree = {
 	id = bex-focus-tree
-	continuous_focus_position = { x = 530 y = 920 } 
+	continuous_focus_position = { x = 530 y = 920 }
 	country = {
 		factor = 0
 		modifier = {
@@ -268,7 +268,7 @@ focus_tree = {
         prerequisite = { focus = BEX_review_laws  }
         mutually_exclusive = { focus = BEX_liberal_economics  }
         completion_reward = {
-            add_ideas = BEX_regulated_economics
+            add_ideas = BEX_regulated_economics_idea
         }
     }
 
@@ -283,7 +283,7 @@ focus_tree = {
         }
         prerequisite = { focus = BEX_review_laws  }
         completion_reward = {
-            add_ideas = BEX_liberal_economics
+            add_ideas = BEX_liberal_economics_idea
         }
     }
 
@@ -299,56 +299,307 @@ focus_tree = {
         prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
         mutually_exclusive = { focus = BEX_government_authority  }
         completion_reward = {
-            
+            add_stability = 0.2
+            add_ideas = BEX_personal_liberty_idea
+        }
+    }
+
+    #Government Authority
+    focus = {
+        id = BEX_government_authority
+        icon = GFX_goal_continuous_restrict_freedom
+        x = 2
+        y = 9
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
+        mutually_exclusive = { focus = BEX_personal_liberty  }
+        completion_reward = {
+            add_stability = -0.2
+            add_ideas = BEX_government_authority_idea
+        }
+    }
+
+    #Allow Immigration
+    focus = {
+        id = BEX_allow_immigration
+        icon = GFX_BEX_allow_immigration-645484
+        x = 0
+        y = 10
+        search_filters = {
+            FOCUS_FILTER_MANPOWER
+        }
+        prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
+        mutually_exclusive = { focus = BEX_ban_immigration  }
+        completion_reward = {
+            add_ideas = BEX_allow_immigration_idea
+        }
+    }
+
+    #Ban Immigration
+    focus = {
+        id = BEX_ban_immigration
+        icon = GFX_BEX_ban_immigration-646045
+        x = 2
+        y = 10
+        search_filters = {
+            FOCUS_FILTER_WAR_SUPPORT
+        }
+        prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
+        mutually_exclusive = { focus = BEX_allow_immigration  }
+        completion_reward = {
+            add_ideas = BEX_ban_immigration_idea
         }
     }
 
     # # --------------------------------------------------- # #
 
-	#Forge Western Claims
-	focus = { #TODO code focus
-		id = BEX_forge_western_claims
-		icon = GFX_BEX_forge_western_claims-262065
-		x = 12
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_agressive_expansionism  }
-	}
+    # # The Final Blow # #
 
-	#The Final Blow
-	focus = { #TODO code focus
-		id = BEX_the_final_blow
-		icon = GFX_focus_BUL_condemn_macedonian_organizations
-		x = 17
-		y = 0
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		mutually_exclusive = { focus = BEX_beatenbutnotgone  }
-		ai_will_do = { factor = 10 }
-		available = {
-			NOT = { has_government = communism }
-		}
-		completion_reward = {
-			communism_drift = -0.1
-		}
-	}
+    #The Final Blow
+    focus = {
+        id = BEX_the_final_blow
+        icon = GFX_focus_BUL_condemn_macedonian_organizations
+        x = 17
+        y = 0
+        cost = 5
+        search_filters = {
+            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+        }
+        mutually_exclusive = { focus = BEX_beatenbutnotgone  }
+        ai_will_do = { factor = 10 }
+        available = {
+            NOT = { has_government = communism }
+        }
+        completion_reward = {
+            add_stability = -0.1
+            add_timed_idea = {
+                idea = BEX_the_final_blow_idea
+                days = 365
+            }
+        }
+    }
 
-	#Follow Germany
-	focus = { #TODO code focus
-		id = BEX_follow_germany
-		icon = GFX_BEX_follow_germany-428
-		x = 17
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_the_final_blow  }
-		mutually_exclusive = { focus = BEX_the_queen  }
-	}
+    # # --------------------------------------------------- # #
+
+    # # FOLLOW GERMANY # #
+
+    #Follow Germany
+    focus = {
+        id = BEX_follow_germany
+        icon = GFX_BEX_follow_germany-428
+        x = 17
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_the_final_blow  }
+        mutually_exclusive = { focus = BEX_the_queen  }
+        completion_reward = {
+            targeted_modifier = {
+                tag = GER
+                generate_wargoal_tension_against = 2
+                #TODO 'BEX_the_german_question' removes this
+            }
+            add_timed_idea = {
+                idea = BEX_follow_germany_idea
+                days = 365
+            }
+        }
+    }
+
+    #Threaten mario
+    focus = {
+        id = BEX_threaten_mario
+        icon = GFX_BEX_threaten_mario-645947
+        x = 10
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_follow_germany  }
+        completion_reward = {
+            add_timed_idea = {
+                idea = BEX_threaten_mario_timed
+                days = 365
+            }
+        }
+    }
+
+    #The Italian Question
+    focus = {
+        id = BEX_the_italian_question
+        icon = GFX_focus_generic_italy_first
+        x = 10
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_threaten_mario  }
+        available = {
+            has_army_manpower = { size > 499999 }
+        }
+        completion_reward = {
+            annex_country = {
+                target = ITA
+                transfer_troops = yes
+            }
+        }
+    }
+
+    #Agressive Expansionism
+    focus = {
+        id = BEX_agressive_expansionism
+        icon = GFX_focus_eng_organise_the_blackshirts
+        x = 14
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_WAR_SUPPORT
+        }
+        prerequisite = { focus = BEX_follow_germany  }
+        mutually_exclusive = { focus = BEX_protect_the_fatherland  }
+        completion_reward = {
+            add_ideas = BEX_aggressive_expansionism_idea
+        }
+    }
+
+    #Forge Western Claims
+    focus = {
+        id = BEX_forge_western_claims
+        icon = GFX_BEX_forge_western_claims-262065
+        x = 12
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_agressive_expansionism  }
+        available = {
+            OR {
+                any_owned_state = { original_tag = GER }
+                any_occupied_state = { original_tag = GER }
+                any_controlled_state = { original_tag = GER }
+                any_allied_country = { original_tag = GER }
+                any_subject_country = { original_tag = GER }
+            }
+        }
+        completion_reward = {
+            create_wargoal = {
+                target = FRA
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = LUX
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = SWI
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = BEL
+                type = annex_everything
+            }
+        }
+    }
+
+    #Target an Empire
+    focus = {
+        id = BEX_target_an_empire
+        icon = GFX_BEX_target_an_empire-92
+        x = 12
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_forge_western_claims  }
+        available = {
+            NOT = { has_global_flag = spanish_civil_war }
+        }
+        completion_reward = {
+            create_wargoal = {
+                target = SPR
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = POR
+                type = annex_everything
+            }
+        }
+    }
+
+    #Forge Eastern Claims
+    focus = {
+        id = BEX_forge_eastern_claims
+        icon = GFX_BEX_forge_eastern_claims-262064
+        x = 16
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_agressive_expansionism  }
+        completion_reward = {
+            create_wargoal = {
+                target = LIT
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = LAT
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = EST
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = POL
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = CZE
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = ROM
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = EST
+                type = annex_everything
+            }
+        }
+    }
+    #Hungary-Hippos
+    focus = {
+        id = BEX_hungaryhippos
+        icon = GFX_BEX_hungaryhippos-259
+        x = 16
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_forge_eastern_claims  }
+        completion_reward = {
+            create_wargoal = {
+                target = AUS
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = HUN
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = ROM
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = YUG
+                type = annex_everything
+            }
+        }
+    }
+
+    # # --------------------------------------------------- # #
 
 	#Integrating Russia
 	focus = { #TODO code focus
@@ -376,21 +627,8 @@ focus_tree = {
 		}
 		prerequisite = { focus = BEX_inverted_maginot_line  }
 		bypass = {
-			#Bypass if france is allied in some way or doesnt exist.
-		}
-	}
-
-	#Agressive Expansionism
-	focus = { #TODO code focus
-		id = BEX_agressive_expansionism
-		icon = GFX_focus_eng_organise_the_blackshirts
-		x = 14
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_WAR_SUPPORT
-		}
-		prerequisite = { focus = BEX_follow_germany  }
-		mutually_exclusive = { focus = BEX_protect_the_fatherland  }
+			#Bypass if france is allied in some way or doesn't exist
+	    }
 	}
 
 	#Protect the Fatherland
@@ -452,69 +690,6 @@ focus_tree = {
 		prerequisite = { focus = BEX_claim_german_territory  }
 	}
 
-	#Forge Eastern Claims
-	focus = { #TODO code focus
-		id = BEX_forge_eastern_claims
-		icon = GFX_BEX_forge_eastern_claims-262064
-		x = 16
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_agressive_expansionism  }
-	}
-
-	#The Italian Question
-	focus = { #TODO code focus
-		id = BEX_the_italian_question
-		icon = GFX_focus_generic_italy_first
-		x = 10
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_threaten_mario  }
-	}
-
-	#Threaten mario
-	focus = { #TODO code focus
-		id = BEX_threaten_mario
-		icon = GFX_BEX_threaten_mario-645947
-		x = 10
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_follow_germany  }
-	}
-
-	#Hungary-Hippos
-	focus = { #TODO code focus
-		id = BEX_hungaryhippos
-		icon = GFX_BEX_hungaryhippos-259
-		x = 16
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_forge_eastern_claims  }
-	}
-
-	#Target an Empire
-	focus = { #TODO code focus
-		id = BEX_target_an_empire
-		icon = GFX_BEX_target_an_empire-92
-		x = 12
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_forge_western_claims  }
-		available = {
-			NOT = { has_global_flag = spanish_civil_war }
-		}
-	}
-
 	#Operation Stockholm
 	focus = { #TODO code focus
 		id = BEX_operation_stockholm
@@ -560,7 +735,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_FRA_OCCUPATION_COST
 		}
-		prerequisite = { focus = BEX_operation_oslo  } prerequisite = { focus = BEX_the_white_death  }
+		prerequisite = { focus = BEX_operation_oslo  }
+		prerequisite = { focus = BEX_the_white_death  }
 	}
 
 	#Bex-Europa
@@ -572,7 +748,11 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_FRA_OCCUPATION_COST
 		}
-		prerequisite = { focus = BEX_the_german_question  } prerequisite = { focus = BEX_the_italian_question  } prerequisite = { focus = BEX_hungaryhippos  } prerequisite = { focus = BEX_target_an_empire  } prerequisite = { focus = BEX_the_bexian_north  }
+		prerequisite = { focus = BEX_the_german_question  }
+		prerequisite = { focus = BEX_the_italian_question  }
+		prerequisite = { focus = BEX_hungaryhippos  }
+		prerequisite = { focus = BEX_target_an_empire  }
+		prerequisite = { focus = BEX_the_bexian_north  }
 		completion_reward = {
 			#Core all held european states, rename to "Bex-Europa"
 		}
@@ -589,7 +769,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = BEX_protect_the_fatherland  }
 		completion_reward = {
-			#Improve relations with britain?
+			#Improve relations with britain
 		}
 	}
 
@@ -684,19 +864,6 @@ focus_tree = {
 		mutually_exclusive = { focus = BEX_red_reactionaries  }
 	}
 
-	#Government Authority
-	focus = { #TODO code focus
-		id = BEX_government_authority
-		icon = GFX_goal_continuous_restrict_freedom
-		x = 2
-		y = 9
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_liberal_economics  focus = BEX_regulated_economics  }
-		mutually_exclusive = { focus = BEX_personal_liberty  }
-	}
-
 	#Militarise Industry
 	focus = { #TODO code focus
 		id = BEX_militarise_industry
@@ -743,32 +910,6 @@ focus_tree = {
 			FOCUS_FILTER_MANPOWER
 		}
 		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#Allow Immigration
-	focus = { #TODO code focus
-		id = BEX_allow_immigration
-		icon = GFX_BEX_allow_immigration-645484
-		x = 0
-		y = 10
-		search_filters = {
-			FOCUS_FILTER_MANPOWER
-		}
-		prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
-		mutually_exclusive = { focus = BEX_ban_immigration  }
-	}
-
-	#Ban Immigration
-	focus = { #TODO code focus
-		id = BEX_ban_immigration
-		icon = GFX_BEX_ban_immigration-646045
-		x = 2
-		y = 10
-		search_filters = {
-			FOCUS_FILTER_WAR_SUPPORT
-		}
-		prerequisite = { focus = BEX_government_authority  focus = BEX_personal_liberty  }
-		mutually_exclusive = { focus = BEX_allow_immigration  }
 	}
 
 	#Civilian Factories I

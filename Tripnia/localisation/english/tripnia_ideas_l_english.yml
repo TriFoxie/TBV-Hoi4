@@ -1,5 +1,6 @@
 ﻿l_english:
-  #BEXANY
+  # # ----------------- BEXANY --------------------- # #
+  # # Communism Path # #
   #communist revolutionaries
   BEX_communist_revolutionaries_idea: "Communist Revolutionaries I"
   BEX_communist_revolutionaries_idea_desc: "What happens when the last sparks of revolution aren't fully quenched?\n\nCurrent acceptance of communism: [?BEX_communism_acceptance_var]%\nComplete focuses before the revolution to raise this and avoid war."
@@ -14,3 +15,28 @@
   #a soviet union
   BEX_a_soviet_union_idea: "A Soviet 'Union'"
   BEX_a_soviet_union_idea_desc: "Having allied with the soviets, we now stand better ground for protection and progress."
+
+  # # Review Laws Path # #
+  #economics
+  BEX_regulated_economics_idea: "Regulated Economics"
+  BEX_regulated_economics_idea_desc: ""
+  BEX_liberal_economics_idea: "Liberal Economics"
+  BEX_liberal_economics_idea_desc: ""
+  #freedoms
+  BEX_personal_liberty_idea: "Personal Liberty"
+  BEX_personal_liberty_idea_desc: ""
+  BEX_government_authority_idea: "Total Government Authority"
+  BEX_government_authority_idea_desc: ""
+  #immigration
+  BEX_allow_immigration_idea: "Immigration Allowed"
+  BEX_allow_immigration_idea_desc: ""
+  BEX_ban_immigration_idea: "Immigration Banned"
+  BEX_ban_immigration_idea_desc: ""
+
+  # # Fascism Path # #
+  #final blow
+  BEX_the_final_blow_idea: "The Final Blow to Communism"
+  BEX_the_final_blow_idea_desc: "We have finally crushed the yucky Commies, time to stamp out the last embers of revolution."
+  #follow germany
+  BEX_follow_germany_idea: "Follow Germany"
+  BEX_follow_germany_idea_desc: "We must follow germany in their approach to fascism and expansionism."
