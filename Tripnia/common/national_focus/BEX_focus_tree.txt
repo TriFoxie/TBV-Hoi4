@@ -25,7 +25,7 @@ focus_tree = {
         mutually_exclusive = { focus = BEX_the_final_blow  }
         ai_will_do = { factor = 5 }
         available = {
-            has_government = fascism
+            always = no
         }
         completion_reward = {
             add_political_power = 100
@@ -683,19 +683,220 @@ focus_tree = {
             }
         }
         completion_reward = {
-            every_state = {
-                limit = {
-                    is_controlled_by = BEX
-                    OR = {
-                        is_core_of = NOR
-                        is_core_of = SWE
-                        is_core_of = DEN
-                        is_core_of = FIN
-                    }
+            NOR = {
+                every_owned_state = {
+                    add_core_of = ROOT
                 }
-                add_core_of = BEX
+            }
+            SWE = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            FIN = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            DEN = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
             }
         }
+    }
+
+    #Bex-Europa
+    focus = {
+        id = BEX_bexeuropa
+        icon = GFX_focus_BUL_prussia_of_the_balkans
+        x = 14
+        y = 6
+        search_filters = {
+            FOCUS_FILTER_FRA_OCCUPATION_COST
+        }
+        prerequisite = { focus = BEX_the_german_question  }
+        prerequisite = { focus = BEX_the_italian_question  }
+        prerequisite = { focus = BEX_hungaryhippos  }
+        prerequisite = { focus = BEX_target_an_empire  }
+        prerequisite = { focus = BEX_the_bexian_north  }
+        completion_reward = {
+            ITA = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            FRA = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            LUX = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            SWI = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            BEL = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            SPR = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            POR = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            LIT = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            LAT = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            EST = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            POL = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            CZE = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            AUS = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            HUN = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            ROM = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+            YUG = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+        }
+    }
+
+    # # --------------------------------------------------- # #
+
+    # # Reintegrating Germany # #
+
+    #The German Embassy
+    focus = {
+        id = BEX_the_german_embassy
+        icon = GFX_focus_chi_mission_to_germany
+        x = 8
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        completion_reward = {
+            add_political_power = 100
+        }
+    }
+
+    #Bexians in Germany
+    focus = {
+        id = BEX_bexians_in_germany
+        icon = GFX_focus_ger_revive_kaiserreich
+        x = 8
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_the_german_embassy  }
+        completion_reward = {
+            add_manpower = -10000
+        }
+    }
+
+    #Claim German Territory
+    focus = {
+        id = BEX_claim_german_territory
+        icon = GFX_BEX_claim_german_territory-646218
+        x = 8
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_bexians_in_germany  }
+        completion_reward = {
+            GER = {
+                every_owned_state = {
+                    add_claim_by = ROOT
+                }
+            }
+        }
+    }
+
+    #The German Question
+    focus = {
+        id = BEX_the_german_question
+        icon = GFX_focus_attack_germany
+        x = 8
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_ANNEXATION
+        }
+        prerequisite = { focus = BEX_claim_german_territory  }
+        available = {
+            has_army_manpower = { size > 699999 }
+        }
+        completion_reward = {
+            #TODO give germany the decision so they *could* decline, probability to choose based on opinion of Bexany
+            annex_country = {
+                target = GER
+                transfer_troops = yes
+            }
+            GER = {
+                every_owned_state = {
+                    add_core_of = ROOT
+                }
+            }
+        }
+    }
+
+    # # --------------------------------------------------- # #
+
+    # # Protect The Fatherland # #
+
+    #Protect the Fatherland
+    focus = { #TODO code focus
+        id = BEX_protect_the_fatherland
+        icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+        x = 20
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_WAR_SUPPORT
+        }
+        prerequisite = { focus = BEX_follow_germany  }
     }
 
     # # --------------------------------------------------- # #
@@ -728,84 +929,6 @@ focus_tree = {
 		bypass = {
 			#Bypass if france is allied in some way or doesn't exist
 	    }
-	}
-
-	#Protect the Fatherland
-	focus = { #TODO code focus
-		id = BEX_protect_the_fatherland
-		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
-		x = 20
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_WAR_SUPPORT
-		}
-		prerequisite = { focus = BEX_follow_germany  }
-	}
-
-	#The German Embassy
-	focus = { #TODO code focus
-		id = BEX_the_german_embassy
-		icon = GFX_focus_chi_mission_to_germany
-		x = 8
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-	}
-
-	#Bexians in Germany
-	focus = { #TODO code focus
-		id = BEX_bexians_in_germany
-		icon = GFX_focus_ger_revive_kaiserreich
-		x = 8
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_the_german_embassy  }
-	}
-
-	#Claim German Territory
-	focus = { #TODO code focus
-		id = BEX_claim_german_territory
-		icon = GFX_BEX_claim_german_territory-646218
-		x = 8
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_bexians_in_germany  }
-	}
-
-	#The German Question
-	focus = { #TODO code focus
-		id = BEX_the_german_question
-		icon = GFX_focus_attack_germany
-		x = 8
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_ANNEXATION
-		}
-		prerequisite = { focus = BEX_claim_german_territory  }
-	}
-
-	#Bex-Europa
-	focus = { #TODO code focus
-		id = BEX_bexeuropa
-		icon = GFX_focus_BUL_prussia_of_the_balkans
-		x = 14
-		y = 6
-		search_filters = {
-			FOCUS_FILTER_FRA_OCCUPATION_COST
-		}
-		prerequisite = { focus = BEX_the_german_question  }
-		prerequisite = { focus = BEX_the_italian_question  }
-		prerequisite = { focus = BEX_hungaryhippos  }
-		prerequisite = { focus = BEX_target_an_empire  }
-		prerequisite = { focus = BEX_the_bexian_north  }
-		completion_reward = {
-			#Core all held european states, rename to "Bex-Europa"
-		}
 	}
 
 	#The Sea Lion
@@ -1193,6 +1316,7 @@ focus_tree = {
 		}
 		prerequisite = { focus = BEX_the_final_blow  }
 		mutually_exclusive = { focus = BEX_follow_germany  }
+		available = { always = no }
 	}
 
 }

@@ -43,3 +43,6 @@
   #intimidation tactics (threaten mario prep)
   BEX_threaten_mario_timed: "Intimidation Tactics"
   BEX_threaten_mario_timed_desc: "We must build up our army to scare the Italians into submission."
+  #aggressive expansionism
+  BEX_aggressive_expansionism_idea: "Aggressive Expansion"
+  BEX_aggressive_expansionism_idea_desc: "Our glorious Bexany must expand its vast horizons."
