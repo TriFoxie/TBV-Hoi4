@@ -46,3 +46,23 @@
   #aggressive expansionism
   BEX_aggressive_expansionism_idea: "Aggressive Expansion"
   BEX_aggressive_expansionism_idea_desc: "Our glorious Bexany must expand its vast horizons."
+
+  # # Technology # #
+  #civilian needs
+  BEX_civilian_needs_idea: "Civilian Needs"
+  BEX_civilian_needs_idea_desc: "We have catered to the needs of our people. They are grateful."
+  #housing developments
+  BEX_housing_developments_idea: "Housing Developments"
+  BEX_housing_developments_idea_desc: "The new houses provide more homes than ever!"
+  #workers rights
+  BEX_workers_rights_idea: "Workers Rights"
+  BEX_workers_rights_idea_desc: "The workers must be protected if we want them to work efficiently and effectively."
+  #worker efficiency
+  BEX_worker_efficiency_idea: "Worker Efficiency"
+  BEX_worker_efficiency_idea_desc: "Maybe we are pushing them a little too hard..."
+  #population boom
+  BEX_population_boom_idea: "Population Boom"
+  BEX_population_boom_idea_desc: "A population boom is happening as people are excited for the future of our country."
+  #global citizens
+  BEX_welcome_global_citizens_idea: "Global Citizenships"
+  BEX_welcome_global_citizens_idea_desc: "We have welcomed and integrated immigrants, tourists and refugees into our economy and now it is thriving."

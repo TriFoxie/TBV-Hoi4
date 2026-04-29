@@ -1,4 +1,5 @@
-﻿l_english: 
+﻿l_english:
+  COMING_SOON_TT: "==== COMING SOON ====\nWorking on this :3"
   BEX_forge_western_claims: "Forge Western Claims"
   BEX_forge_western_claims_desc: "Our warmongers wish to expand west!"
   BEX_sway_the_workers: "Sway the workers"
@@ -133,6 +134,7 @@
   BEX_british_naval_help_desc: "Britain has kindly offered to improve our navy in return for a promise of extended peace."
   BEX_the_eurasian_protectorate: "The Eurasian Protectorate"
   BEX_the_eurasian_protectorate_desc: "Its time for us to expand our defensive stance to Europe."
+  BEX_eurasian_protectorate_faction: "Eurasian Protectorate"
   BEX_the_queen: "The Queen"
   BEX_the_queen_desc: "..."
   BEX_a_peaceful_transition: "A peaceful transition"

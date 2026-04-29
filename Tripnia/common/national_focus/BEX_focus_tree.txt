@@ -888,7 +888,7 @@ focus_tree = {
     # # Protect The Fatherland # #
 
     #Protect the Fatherland
-    focus = { #TODO code focus
+    focus = {
         id = BEX_protect_the_fatherland
         icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
         x = 20
@@ -897,6 +897,361 @@ focus_tree = {
             FOCUS_FILTER_WAR_SUPPORT
         }
         prerequisite = { focus = BEX_follow_germany  }
+        completion_reward = {
+            set_rule = {
+                can_join_factions = no
+                can_create_factions = yes
+                can_puppet = yes
+                can_not_declare_war = yes
+                can_send_volunteers = yes
+            }
+            add_political_power = 150
+            create_faction = BEX_eurasian_protectorate_faction
+        }
+    }
+
+    #Fortify Western Borders
+	focus = {
+		id = BEX_fortify_western_borders
+		icon = GFX_BEX_fortify_western_borders-646313
+		x = 18
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = BEX_protect_the_fatherland  }
+		bypass = {
+			OR = {
+			    NOT = {
+                    country_exists = GER
+                }
+                GER = {
+                    is_puppet_of = BEX
+                }
+			}
+		}
+		completion_reward = {
+		    65 = {
+		        add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9441 #Sachsen
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 3535 #Sachsen
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11545 #Sachsen
+                }
+		    }
+		    64 = {
+		        add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9560 #Brandenburg
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 6487 #Brandenburg
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 3522 #Brandenburg
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11359 #Brandenburg
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11219 #Brandenburg
+                }
+		    }
+		    61 = {
+		        add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9294 #Mecklenburg
+                }
+		    }
+		    58 = {
+		        add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9320 #Holstein
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9347 #Holstein
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 3368 #Holstein
+                }
+		    }
+		    909 = {
+	            add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11366 #Schleswig
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 317 #Schleswig
+                }
+		    }
+            GER = {
+                country_event = {
+                    days = 1
+                    id = BEX_inv_germany.1
+                }#TODO fix localisations
+            }
+		}
+	}
+    # # --------------------------------------------------- # #
+
+    # # Technology # #
+
+    #A Technological Haven
+    focus = {
+        id = BEX_a_technological_haven
+        icon = GFX_focus_research
+        x = 3
+        y = 0
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    #Scientific Investments
+    focus = {
+        id = BEX_scientific_investments
+        icon = GFX_goal_tfv_generic_tech_sharing
+        x = 2
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
+        prerequisite = { focus = BEX_a_technological_haven  }
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    #Breakthroughs
+	focus = {
+		id = BEX_breakthroughs
+		icon = GFX_focus_research2
+		x = 2
+		y = 3
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = BEX_scientific_investments  }
+		completion_reward = {
+		    add_research_slot = 1
+		}
+	}
+
+	#Bexian Science Institute
+    focus = {
+        id = BEX_bexian_science_institute
+        icon = GFX_BEX_bexian_science_institute-646187
+        x = 2
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
+        prerequisite = { focus = BEX_breakthroughs  }
+        completion_reward = {
+            add_research_slot = 1
+            add_tech_bonus = {
+                bonus = 0.2
+                uses = 100
+                category = electronics
+            }
+            add_tech_bonus = {
+                bonus = 0.25
+                uses = 100
+                category = industry
+            }
+        }
+    }
+
+    #Civilian Needs
+	focus = {
+		id = BEX_civilian_needs
+		icon = GFX_BEX_civilian_needs-646147
+		x = 4
+		y = 1
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_a_technological_haven  }
+        completion_reward = {
+            add_ideas = BEX_civilian_needs_idea
+        }
+	}
+
+    #Civilian Factories I
+	focus = {
+		id = BEX_civilian_factories_i
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 3
+		y = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = BEX_civilian_needs  }
+		completion_reward = {
+            64 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 5
+                    instant_build = yes
+                }
+            }
+        }
+	}
+
+	#Civilian Factories II
+    focus = {
+        id = BEX_civilian_factories_ii
+        icon = GFX_goal_generic_construct_civ_factory
+        x = 5
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_civilian_needs  }
+        completion_reward = {
+            64 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 5
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    #Housing Developments
+    focus = {
+        id = BEX_housing_developments
+        icon = GFX_BEX_housing_developments-645953
+        x = 4
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_STABILITY
+        }
+        prerequisite = { focus = BEX_civilian_factories_i  focus = BEX_civilian_factories_ii  }
+        completion_reward = {
+            swap_ideas = {
+                add_idea = BEX_housing_developments_idea
+                remove_idea = BEX_civilian_needs_idea
+            }
+        }
+    }
+
+    #Workers Rights
+    focus = {
+        id = BEX_workers_rights
+        icon = GFX_BEX_workers_rights-646000
+        x = 4
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_housing_developments }
+        completion_reward = {
+            add_ideas = BEX_workers_rights_idea
+        }
+    }
+
+    #Worker Efficiency
+    focus = {
+        id = BEX_worker_efficiency
+        icon = GFX_BEX_worker_efficiency-645742
+        x = 3
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_workers_rights  }
+        prerequisite = { focus = BEX_bexian_science_institute  }
+        completion_reward = {
+            swap_ideas = {
+                add_idea = BEX_worker_efficiency_idea
+                remove_idea = BEX_workers_rights_idea
+            }
+        }
+    }
+
+    #A population boom
+    focus = {
+        id = BEX_a_population_boom
+        icon = GFX_BEX_a_population_boom-645969
+        x = 6
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_MANPOWER
+        }
+        prerequisite = { focus = BEX_a_technological_haven  }
+        completion_reward = {
+            add_ideas = BEX_population_boom_idea
+        }
+    }
+
+    #Invite Citizens
+    focus = { #TODO code focus
+        id = BEX_invite_citizens
+        icon = GFX_BEX_invite_citizens-645689
+        x = 6
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_MANPOWER
+        }
+        prerequisite = { focus = BEX_a_population_boom  }
+        completion_reward = {
+            add_political_power = 50
+        }
+    }
+
+    #Welcome Global Citizens
+    focus = { #TODO code focus
+        id = BEX_welcome_global_citizens
+        icon = GFX_focus_focus_fra_third_empire
+        x = 5
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_MANPOWER
+        }
+        prerequisite = { focus = BEX_invite_citizens  } prerequisite = { focus = BEX_workers_rights  }
+        available = {
+            has_idea = BEX_allow_immigration_idea
+        }
+        completion_reward = {
+            add_ideas = BEX_welcome_global_citizens_idea
+        }
     }
 
     # # --------------------------------------------------- # #
@@ -946,17 +1301,6 @@ focus_tree = {
 		}
 	}
 
-	#A Technological Haven
-	focus = { #TODO code focus
-		id = BEX_a_technological_haven
-		icon = GFX_focus_research
-		x = 3
-		y = 0
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-	}
-
 	#Defense against the Reds
 	focus = { #TODO code focus
 		id = BEX_defense_against_the_reds
@@ -979,21 +1323,6 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = BEX_protect_the_fatherland  }
-	}
-
-	#Fortify Western Borders
-	focus = { #TODO code focus
-		id = BEX_fortify_western_borders
-		icon = GFX_BEX_fortify_western_borders-646313
-		x = 18
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_protect_the_fatherland  }
-		bypass = {
-			#Bypass if germany is owned
-		}
 	}
 
 	#Inverted Maginot Line
@@ -1047,84 +1376,6 @@ focus_tree = {
 			FOCUS_FILTER_INDUSTRY
 		}
 		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#Civilian Needs
-	focus = { #TODO code focus
-		id = BEX_civilian_needs
-		icon = GFX_BEX_civilian_needs-646147
-		x = 4
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#Scientific Investments
-	focus = { #TODO code focus
-		id = BEX_scientific_investments
-		icon = GFX_goal_tfv_generic_tech_sharing
-		x = 2
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#A population boom
-	focus = { #TODO code focus
-		id = BEX_a_population_boom
-		icon = GFX_BEX_a_population_boom-645969
-		x = 6
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_MANPOWER
-		}
-		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#Civilian Factories I
-	focus = { #TODO code focus
-		id = BEX_civilian_factories_i
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 3
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_civilian_needs  }
-	}
-
-	#Invite Citizens
-	focus = { #TODO code focus
-		id = BEX_invite_citizens
-		icon = GFX_BEX_invite_citizens-645689
-		x = 6
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_MANPOWER
-		}
-		prerequisite = { focus = BEX_a_population_boom  }
-	}
-
-	#Welcome Global Citizens
-	focus = { #TODO code focus
-		id = BEX_welcome_global_citizens
-		icon = GFX_focus_focus_fra_third_empire
-		x = 5
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_MANPOWER
-		}
-		prerequisite = { focus = BEX_invite_citizens  } prerequisite = { focus = BEX_workers_rights  }
-		available = {
-			#Must have idea "allowed immigration"
-		}
-		completion_reward = {
-			#Massive recruitable population boost
-		}
 	}
 
 	#Expand Weapons Production
@@ -1188,78 +1439,6 @@ focus_tree = {
 			FOCUS_FILTER_RESEARCH
 		}
 		prerequisite = { focus = BEX_weapons_of_mass_destruction  }
-	}
-
-	#Breakthroughs
-	focus = { #TODO code focus
-		id = BEX_breakthroughs
-		icon = GFX_focus_research2
-		x = 2
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		prerequisite = { focus = BEX_scientific_investments  }
-	}
-
-	#Bexian Science Institute
-	focus = { #TODO code focus
-		id = BEX_bexian_science_institute
-		icon = GFX_BEX_bexian_science_institute-646187
-		x = 2
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		prerequisite = { focus = BEX_breakthroughs  }
-	}
-
-	#Housing Developments
-	focus = { #TODO code focus
-		id = BEX_housing_developments
-		icon = GFX_BEX_housing_developments-645953
-		x = 4
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_STABILITY
-		}
-		prerequisite = { focus = BEX_civilian_factories_i  focus = BEX_civilian_factories_ii  }
-	}
-
-	#Workers Rights
-	focus = { #TODO code focus
-		id = BEX_workers_rights
-		icon = GFX_BEX_workers_rights-646000
-		x = 4
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_housing_developments  }
-	}
-
-	#Worker Efficiency
-	focus = { #TODO code focus
-		id = BEX_worker_efficiency
-		icon = GFX_BEX_worker_efficiency-645742
-		x = 3
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_workers_rights  } prerequisite = { focus = BEX_bexian_science_institute  }
-	}
-
-	#Civilian Factories II
-	focus = { #TODO code focus
-		id = BEX_civilian_factories_ii
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 5
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_civilian_needs  }
 	}
 
 	#A Truce

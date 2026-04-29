@@ -12,7 +12,7 @@ ideas = {
 
             modifier = {
                 communism_drift = 0.1
-                stability_factor = -0.2
+                stability_factor = -0.1
             }
 
             cancel = {
@@ -28,7 +28,7 @@ ideas = {
 
             modifier = {
                 communism_drift = 0.2
-                stability_factor = -0.1
+                stability_factor = -0.2
                 production_speed_buildings_factor = -0.2
             }
 
@@ -161,7 +161,7 @@ ideas = {
             picture = big_entente_idea
             modifier = {
                 conscription = 0.05
-                training_time_factor = 1
+                training_time_factor = -5
                 minimum_training_level = -0.5
             } #Lets you pump out lots of troops quickly to meet the focus requirements faster.
 
@@ -186,6 +186,60 @@ ideas = {
                 offensive_war_stability_factor = 0.5
                 defensive_war_stability_factor = -0.5
                 war_support_weekly = 0.01
+            }
+        }
+
+        # # --------------------------------------------------- # #
+
+        # # Technology # #
+
+        BEX_civilian_needs_idea = {
+            picture = GFX_BEX_civilian_needs-646147
+            modifier = {
+                consumer_goods_factor = -0.25
+            }
+        }
+
+        BEX_housing_developments_idea = {
+            picture = GFX_BEX_housing_developments-645953
+            modifier = {
+                consumer_goods_factor = -0.25
+                stability_factor = 0.25
+                conscription = 0.01
+            }
+        }
+
+        BEX_workers_rights_idea = {
+            picture = GFX_BEX_workers_rights-646000
+            modifier = {
+                stability_factor = 0.25
+                political_power_gain_factor = 0.1
+                communism_drift = 0.01
+                industrial_capacity_factory = 0.05
+            }
+        }
+
+        BEX_worker_efficiency_idea = {
+            picture = GFX_BEX_worker_efficiency-645742
+            modifier = {
+                stability_factor = -0.1
+                communism_drift = 0.02
+                fascism_drift = -0.01
+                industrial_capacity_factory = 0.1
+            }
+        }
+
+        BEX_population_boom_idea = {
+            picture = GFX_BEX_a_population_boom-645969
+            modifier = {
+                conscription = 0.05
+            }
+        }
+
+        BEX_welcome_global_citizens_idea = {
+            picture = GFX_focus_focus_fra_third_empire
+            modifier = {
+                conscription = 0.25
             }
         }
 
