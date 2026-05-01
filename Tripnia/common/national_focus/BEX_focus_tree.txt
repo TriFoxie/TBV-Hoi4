@@ -1124,6 +1124,7 @@ focus_tree = {
 		prerequisite = { focus = BEX_civilian_needs  }
 		completion_reward = {
             64 = {
+                add_extra_state_shared_building_slots = 2
                 add_building_construction = {
                     type = industrial_complex
                     level = 5
@@ -1145,6 +1146,7 @@ focus_tree = {
         prerequisite = { focus = BEX_civilian_needs  }
         completion_reward = {
             64 = {
+                add_extra_state_shared_building_slots = 2
                 add_building_construction = {
                     type = industrial_complex
                     level = 5
@@ -1222,7 +1224,7 @@ focus_tree = {
     }
 
     #Invite Citizens
-    focus = { #TODO code focus
+    focus = {
         id = BEX_invite_citizens
         icon = GFX_BEX_invite_citizens-645689
         x = 6
@@ -1237,7 +1239,7 @@ focus_tree = {
     }
 
     #Welcome Global Citizens
-    focus = { #TODO code focus
+    focus = {
         id = BEX_welcome_global_citizens
         icon = GFX_focus_focus_fra_third_empire
         x = 5
@@ -1251,6 +1253,156 @@ focus_tree = {
         }
         completion_reward = {
             add_ideas = BEX_welcome_global_citizens_idea
+        }
+    }
+
+    #Militarise Industry
+    focus = {
+        id = BEX_militarise_industry
+        icon = GFX_BEX_militarise_industry-645975
+        x = 0
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_a_technological_haven  }
+        completion_reward = {
+            64 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                    province = 6521
+                }
+            }
+        }
+    }
+
+    #Expand Weapons Production
+    focus = {
+        id = BEX_expand_weapons_production
+        icon = GFX_focus_generic_combined_arms
+        x = 0
+        y = 2
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_militarise_industry  }
+        completion_reward = {
+            64 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                    province = 6521
+                }
+            }
+        }
+    }
+
+    #Bexian Arsenal
+    focus = {
+        id = BEX_bexian_arsenal
+        icon = GFX_BEX_bexian_arsenal-262051
+        x = 0
+        y = 3
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_expand_weapons_production  }
+        completion_reward = {
+            64 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                    province = 6521
+                }
+            }
+        }
+    }
+
+    #Vehicular Combat
+    focus = {
+        id = BEX_vehicular_combat
+        icon = GFX_BEX_vehicular_combat-645863
+        x = 0
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
+        prerequisite = { focus = BEX_bexian_arsenal  }
+        completion_reward = {
+            64 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                    province = 6521
+                }
+            }
+        }
+    }
+
+    #Weapons of Mass Destruction
+    focus = {
+        id = BEX_weapons_of_mass_destruction
+        icon = GFX_focus_wonderweapons
+        x = 1
+        y = 5
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
+        prerequisite = { focus = BEX_vehicular_combat  } prerequisite = { focus = BEX_bexian_science_institute  }
+        completion_reward = {
+            64 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = nuclear_reactor
+                    level = 2
+                    instant_build = yes
+                    province = 6521
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 6521
+                }
+            }
+        }
+    }
+
+    #Bringers of Death
+    focus = {
+        id = BEX_bringers_of_death
+        icon = GFX_BEX_bringers_of_death-645948
+        x = 1
+        y = 6
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
+        prerequisite = { focus = BEX_weapons_of_mass_destruction  }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 10
+                uses = 1
+                category = nuclear
+            }
+            add_tech_bonus = {
+                bonus = 10
+                uses = 20
+                category = computing
+            }
+            add_tech_bonus = {
+                bonus = 10
+                uses = 1
+                category = rocketry
+            }
         }
     }
 
@@ -1364,81 +1516,6 @@ focus_tree = {
 		}
 		prerequisite = { focus = BEX_defense_against_the_reds  }
 		mutually_exclusive = { focus = BEX_red_reactionaries  }
-	}
-
-	#Militarise Industry
-	focus = { #TODO code focus
-		id = BEX_militarise_industry
-		icon = GFX_BEX_militarise_industry-645975
-		x = 0
-		y = 1
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_a_technological_haven  }
-	}
-
-	#Expand Weapons Production
-	focus = { #TODO code focus
-		id = BEX_expand_weapons_production
-		icon = GFX_focus_generic_combined_arms
-		x = 0
-		y = 2
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_militarise_industry  }
-	}
-
-	#Bexian Arsenal
-	focus = { #TODO code focus
-		id = BEX_bexian_arsenal
-		icon = GFX_BEX_bexian_arsenal-262051
-		x = 0
-		y = 3
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_expand_weapons_production  }
-	}
-
-	#Vehicular Combat
-	focus = { #TODO code focus
-		id = BEX_vehicular_combat
-		icon = GFX_BEX_vehicular_combat-645863
-		x = 0
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		prerequisite = { focus = BEX_bexian_arsenal  }
-	}
-
-	#Weapons of Mass Destruction
-	focus = { #TODO code focus
-		id = BEX_weapons_of_mass_destruction
-		icon = GFX_focus_wonderweapons
-		x = 1
-		y = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		prerequisite = { focus = BEX_vehicular_combat  } prerequisite = { focus = BEX_bexian_science_institute  }
-		completion_reward = {
-			#Add big bonus to nuke production and icbm research
-		}
-	}
-
-	#Bringers of Death
-	focus = { #TODO code focus
-		id = BEX_bringers_of_death
-		icon = GFX_BEX_bringers_of_death-645948
-		x = 1
-		y = 6
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		prerequisite = { focus = BEX_weapons_of_mass_destruction  }
 	}
 
 	#A Truce
