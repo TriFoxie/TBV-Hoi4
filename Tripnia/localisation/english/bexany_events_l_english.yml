@@ -1,0 +1,14 @@
+l_english:
+  BEX_inv_germany.1_title: "The Bexian Alliance"
+  BEX_inv_germany.1_desc: "Bexany wishes to unite europe and asia under one defensive pact, will you join them?"
+  BEX_inv_germany.1_yes: "Yes, together united!"
+  BEX_inv_germany.1_no: "No. We have far grander plans..."
+  BEX_inv_germany.1_offended: "How dare they interfere with the reich! This means war!"
+
+  BEX_inv_germany.2_title: "The Bexian Alliance"
+  BEX_inv_germany.2_desc: "Germany has turned down our offer. We must find some other way to unite. Maybe the people?"
+  BEX_inv_germany.2_ok: "How unfortunate."
+  
+  BEX_inv_germany.3_title: "The Bexian Alliance"
+  BEX_inv_germany.3_desc: "Germany has declared war on us!! They say they are the rightful owners to our land and will not bow!"
+  BEX_inv_germany.3_ok: "Such fools they are for attacking!"

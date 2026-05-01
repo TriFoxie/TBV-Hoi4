@@ -1,0 +1,81 @@
+add_namespace = BEX_inv_germany
+
+country_event = {
+    id = BEX_inv_germany.1
+    title = BEX_inv_germany.1_title
+    desc = BEX_inv_germany.1_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_germany.1_yes
+        ai_chance = {
+            factor = 70
+        }
+        BEX = {
+            add_to_faction = GER
+        }
+    }
+
+    option = {
+        name = BEX_inv_germany.1_no
+        ai_chance = {
+            factor = 20
+        }
+        BEX = {
+            country_event = {
+                days = 1
+                id = BEX_germany_declined_event
+            }
+        }
+    }
+
+    option = {
+        name = BEX_inv_germany.1_offended
+        ai_chance = {
+            factor = 10
+        }
+        GER = {
+            declare_war_on = {
+                target = GER
+                type = annex_everything
+            }
+        }
+        BEX = {
+            country_event = {
+                days = 1
+                id = BEX_germany_angry_event
+            }
+        }
+    }
+}
+
+country_event = {
+    id = BEX_inv_germany.2
+    title = BEX_inv_germany.2_title
+    desc = BEX_inv_germany.2_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_germany.2_ok
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
+
+country_event = {
+    id = BEX_inv_germany.3
+    title = BEX_inv_germany.3_title
+    desc = BEX_inv_germany.3_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_germany.3_ok
+        ai_chance = {
+            factor = 100
+        }
+    }
+}
