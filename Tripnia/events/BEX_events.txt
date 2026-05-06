@@ -1,4 +1,7 @@
 add_namespace = BEX_inv_germany
+add_namespace = BEX_inv_france
+
+# # INVITE GERMANY # #
 
 country_event = {
     id = BEX_inv_germany.1
@@ -25,7 +28,7 @@ country_event = {
         BEX = {
             country_event = {
                 days = 1
-                id = BEX_germany_declined_event
+                id = BEX_inv_germany.2
             }
         }
     }
@@ -44,7 +47,7 @@ country_event = {
         BEX = {
             country_event = {
                 days = 1
-                id = BEX_germany_angry_event
+                id = BEX_inv_germany.3
             }
         }
     }
@@ -76,6 +79,90 @@ country_event = {
         name = BEX_inv_germany.3_ok
         ai_chance = {
             factor = 100
+        }
+    }
+}
+
+# # -------------------- # #
+
+# # INVITE FRANCE # #
+
+country_event = {
+    id = BEX_inv_france.1
+    title = BEX_inv_france.1_title
+    desc = BEX_inv_france.1_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_france.1_yes
+        ai_chance = {
+            factor = 70
+        }
+        BEX = {
+            add_to_faction = FRA
+        }
+    }
+
+    option = {
+        name = BEX_inv_france.1_no
+        ai_chance = {
+            factor = 30
+        }
+        BEX = {
+            country_event = {
+                days = 1
+                id = BEX_inv_france.2
+            }
+        }
+    }
+}
+
+country_event = {
+    id = BEX_inv_france.2
+    title = BEX_inv_france.2_title
+    desc = BEX_inv_france.2_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_france.2_ok
+        ai_chance = {
+            factor = 70
+        }
+    }
+
+    option = {
+        name = BEX_inv_france.2_war
+        ai_chance = {
+            factor = 30
+        }
+        FRA = {
+            country_event = {
+                days = 1
+                id = BEX_inv_france.3
+            }
+        }
+    }
+}
+
+country_event = {
+    id = BEX_inv_france.3
+    title = BEX_inv_france.3_title
+    desc = BEX_inv_france.3_desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = BEX_inv_france.3_ok
+        ai_chance = {
+            factor = 100
+        }
+        BEX = {
+            declare_war_on = {
+                target = FRA
+                type = annex_everything
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-l_english:
+﻿l_english:
+  # # INVITE GERMANY # #
   BEX_inv_germany.1_title: "The Bexian Alliance"
   BEX_inv_germany.1_desc: "Bexany wishes to unite europe and asia under one defensive pact, will you join them?"
   BEX_inv_germany.1_yes: "Yes, together united!"
@@ -12,3 +13,16 @@ l_english:
   BEX_inv_germany.3_title: "The Bexian Alliance"
   BEX_inv_germany.3_desc: "Germany has declared war on us!! They say they are the rightful owners to our land and will not bow!"
   BEX_inv_germany.3_ok: "Such fools they are for attacking!"
+  # # -------------------- # #
+
+  # # INVITE FRANCE # #
+  BEX_inv_france.1_title: "The Eurasian 'Protectorate'"
+  BEX_inv_france.1_desc: "Bexany has 'offered' us an alliance. However, due to their size, fortification of our border and the growing of their faction, some stipulate that this might not be a choice."
+  BEX_inv_france.1.yes: "We would do well to comply. For the good of the country."
+  BEX_inv_france.1.no: "They are no match for us! They wouldn't dare touch us. We will never join them."
+
+  BEX_inv_france.2_title: "The French Declined"
+  BEX_inv_france.2_desc: "France is testing us. They refused to join our us in our quest to protect the world. What should we do to them?"
+  BEX_inv_france.2_ok: "As they wish, they shall die alone."
+  BEX_inv_france.2_war: "They shall know the death and destruction we offering protection from... WAR!"
+  # # -------------------- # #

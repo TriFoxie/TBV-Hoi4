@@ -9,237 +9,6 @@ focus_tree = {
 		}
 	}
 
-	# # BEATEN BUT NOT GONE # #
-	#TODO add focus times
-
-	#Beaten, but not gone
-    focus = {
-        id = BEX_beatenbutnotgone
-        icon = GFX_BEX_beatenbutnotgone-646334
-        x = 26
-        y = 0
-        cost = 5
-        search_filters = {
-            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-        }
-        mutually_exclusive = { focus = BEX_the_final_blow  }
-        ai_will_do = { factor = 5 }
-        available = {
-            always = no
-        }
-        completion_reward = {
-            add_political_power = 100
-            add_ideas = BEX_communist_revolutionaries_idea
-            set_variable = { var = BEX_communism_acceptance_var }
-        }
-    }
-
-    #Sway the workers
-    focus = {
-        id = BEX_sway_the_workers
-        icon = GFX_BEX_sway_the_workers-646000
-        x = 26
-        y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_beatenbutnotgone  }
-        completion_reward = {
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 10
-            }
-            swap_ideas = {
-                remove_idea = BEX_communist_revolutionaries_idea
-                add_idea = BEX_communist_revolutionaries_idea_2
-            }
-        }
-    }
-
-    #Introduce socialist education
-    #TODO fix image
-    focus = {
-        id = BEX_introduce_socialist_education
-        icon = GFX_BEX_introduce_socialist_education-646119
-        x = 24
-        y = 3
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_sway_the_workers  }
-        completion_reward = {
-            add_ideas = BEX_socialist_education_idea
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 20
-            }
-        }
-    }
-
-    #Establish a council
-    focus = {
-        id = BEX_establish_a_council
-        icon = GFX_focus_hol_the_foundations_of_defense
-        x = 28
-        y = 2
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_sway_the_workers  }
-        completion_reward = {
-            add_political_power = 25
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 5
-            }
-        }
-    }
-
-    #Integrate leftists into government
-    focus = {
-        id = BEX_integrate_leftists_into_government
-        icon = GFX_focus_generic_soviet_politics
-        x = 28
-        y = 3
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_establish_a_council  }
-        completion_reward = {
-            add_political_power = 50
-            add_ideas = BEX_leftists_in_government_idea
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 25
-            }
-        }
-    }
-
-    #Arm the workers
-    focus = {
-        id = BEX_arm_the_workers
-        icon = GFX_BEX_arm_the_workers-646001
-        x = 26
-        y = 2
-        search_filters = {
-            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-        }
-        prerequisite = { focus = BEX_sway_the_workers  }
-        completion_reward = {
-            add_stability = -0.1
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 20
-            }
-        }
-    }
-
-    #Invite the militia
-    focus = {
-        id = BEX_invite_the_militia
-        icon = GFX_BEX_invite_the_militia-645755
-        x = 26
-        y = 3
-        search_filters = {
-            FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-        }
-        prerequisite = { focus = BEX_arm_the_workers  }
-        completion_reward = {
-            add_stability = -0.01
-            add_to_variable = {
-                var = BEX_communism_acceptance_var
-                value = 20
-            }
-        }
-    }
-
-    #Peaceful Transition
-    focus = {
-        id = BEX_a_peaceful_transition
-        icon = GFX_goal_generic_major_war
-        x = 27
-        y = 4
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_invite_the_militia  }
-        mutually_exclusive = { focus = BEX_the_second_revolution }
-        available = {
-            communism > 0.5
-            check_variable = {
-                var = BEX_communism_acceptance_var
-                value = 95
-                compare = greater_than_or_equals
-            }
-        }
-        completion_reward = {
-            set_politics = {
-                ruling_party = communism
-                elections_allowed = no
-            }
-        }
-    }
-
-    #Second revolution
-    focus = { #TODO code focus (Civil war)
-        id = BEX_the_second_revolution
-        icon = GFX_goal_generic_major_war
-        x = 25
-        y = 4
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_invite_the_militia  }
-        mutually_exclusive = { focus = BEX_a_peaceful_transition }
-        available = {
-            communism > 0.5
-            check_variable = {
-                var = BEX_communism_acceptance_var
-                value = 95
-                compare = less_than_or_equals
-            }
-        }
-    }
-
-    #A soviet 'Union' TODO fix image
-    focus = {
-        id = BEX_asovietunion
-        icon = GFX_focus_chi_mission_to_the_soviet_union
-        x = 27
-        y = 5
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_the_second_revolution focus = BEX_a_peaceful_transition }
-        available = {
-            country_exists = SOV
-            NOT = { is_in_faction = yes }
-        }
-        mutually_exclusive = { focus = BEX_bexian_communism  }
-        completion_reward = {
-            add_ideas = BEX_a_soviet_union_idea
-            #TODO add bexany to the comintern
-        }
-    }
-
-    #Bexian Communism
-    focus = { #TODO code focus
-        id = BEX_bexian_communism
-        icon = GFX_BEX_bexian_communism-426
-        x = 25
-        y = 5
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        prerequisite = { focus = BEX_the_second_revolution focus = BEX_a_peaceful_transition }
-        mutually_exclusive = { focus = BEX_asovietunion  }
-        completion_reward = {
-            add_ideas = BEX_bexian_communism_idea
-        }
-    }
-
-    # # --------------------------------------------------- # #
-
     # # REVIEW LAWS # #
 
     #Review Laws
@@ -367,7 +136,6 @@ focus_tree = {
         search_filters = {
             FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
         }
-        mutually_exclusive = { focus = BEX_beatenbutnotgone  }
         ai_will_do = { factor = 10 }
         available = {
             NOT = { has_government = communism }
@@ -474,15 +242,6 @@ focus_tree = {
             FOCUS_FILTER_ANNEXATION
         }
         prerequisite = { focus = BEX_agressive_expansionism  }
-        available = {
-            OR {
-                any_owned_state = { original_tag = GER }
-                any_occupied_state = { original_tag = GER }
-                any_controlled_state = { original_tag = GER }
-                any_allied_country = { original_tag = GER }
-                any_subject_country = { original_tag = GER }
-            }
-        }
         completion_reward = {
             create_wargoal = {
                 target = FRA
@@ -1020,10 +779,103 @@ focus_tree = {
                 country_event = {
                     days = 1
                     id = BEX_inv_germany.1
-                }#TODO fix localisations
+                }
             }
 		}
 	}
+
+	#Inverted Maginot Line
+    focus = {
+        id = BEX_inverted_maginot_line
+        icon = GFX_BEX_inverted_maginot_line-646371
+        x = 18
+        y = 4
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_fortify_western_borders  }
+        available = {
+            OR = {
+                is_in_faction_with = GER
+                is_puppet_of = GER
+                GER = { is_puppet_of = BEX }
+                NOT = { country_exists = GER }
+            }
+        }
+        completion_reward = {
+            42 = {
+                add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 9575 #Moseland
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11531 #Moseland
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 563 #Moseland
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 3558 #Moseland
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 3530 #Baden
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 6542 #Baden
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 6712 #Baden
+                }add_building_construction = {
+                    type = bunker
+                    level = 10
+                    instant_build = yes
+                    province = 11640 #Baden
+                }
+            }
+        }
+    }
+
+    #Baguette Treaty
+    focus = {
+        id = BEX_baguette_treaty
+        icon = GFX_focus_chi_reach_out_to_france
+        x = 18
+        y = 6
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        prerequisite = { focus = BEX_inverted_maginot_line  }
+        bypass = {
+            NOT = { country_exists = FRA }
+            FRA = { is_in_faction_with = BEX }
+        }
+        completion_reward = {
+            FRA = {
+                country_event = {
+                    days = 1
+                    id = BEX_inv_france.1
+                }
+            }
+        }
+    }
+
     # # --------------------------------------------------- # #
 
     # # Technology # #
@@ -1423,21 +1275,6 @@ focus_tree = {
 		}
 	}
 
-	#Baguette Treaty
-	focus = { #TODO code focus
-		id = BEX_baguette_treaty
-		icon = GFX_focus_chi_reach_out_to_france
-		x = 18
-		y = 6
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_inverted_maginot_line  }
-		bypass = {
-			#Bypass if france is allied in some way or doesn't exist
-	    }
-	}
-
 	#The Sea Lion
 	focus = { #TODO code focus
 		id = BEX_the_sea_lion
@@ -1475,21 +1312,6 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = BEX_protect_the_fatherland  }
-	}
-
-	#Inverted Maginot Line
-	focus = { #TODO code focus
-		id = BEX_inverted_maginot_line
-		icon = GFX_BEX_inverted_maginot_line-646371
-		x = 18
-		y = 4
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = BEX_fortify_western_borders  }
-		available = {
-			#Must own Germany
-		}
 	}
 
 	#Red Reactionaries

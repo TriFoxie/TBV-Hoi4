@@ -2,23 +2,7 @@ capital = 64
 #Berlin
 
 #ARMIES
-set_oob = "BEX_1936_Army"
-if = {
-    limit = { has_dlc = "Man the Guns" }
-    set_naval_oob = "BEX_1936_naval_mtg"
-}
-if = {
-    limit = { NOT = { has_dlc = "Man the Guns" } }
-    set_naval_oob = "BEX_1936_naval_legacy"
-}
-if = {
-    limit = { has_dlc = "By Blood Alone" }
-    set_air_oob = "BEX_1936_air_bba"
-}
-if = {
-    limit = { NOT = { has_dlc = "By Blood Alone" } }
-    set_air_oob = "BEX_1936_air_legacy"
-}
+oob = "BEX_1936_Army"
 
 #EFFECTS
 set_research_slots = 4
