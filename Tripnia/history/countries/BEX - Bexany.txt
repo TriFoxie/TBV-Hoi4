@@ -2,7 +2,7 @@ capital = 64
 #Berlin
 
 #ARMIES
-set_oob = "BEX_1936"
+set_oob = "BEX_1936_Army"
 if = {
     limit = { has_dlc = "Man the Guns" }
     set_naval_oob = "BEX_1936_naval_mtg"
@@ -157,6 +157,3 @@ if = {
         basic_light_tank = 1
     }
 }
-
-#SETUP TERRITORY
-#releasables & cores

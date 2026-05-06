@@ -24,194 +24,258 @@ division_template = {
 
 units = {
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
     division = {
-        name = "1st Bexian Femboy Brigade"
-        location = 64 #Berlin
+        division_name = {
+            is_name_ordered = yes
+        }
+        location = 6521 #Berlin
         division_template = "Bexian Femboy Brigade"
         start_experience_factor = 0.2
     }
